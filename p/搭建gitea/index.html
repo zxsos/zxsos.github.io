@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare账号\n域名\nSSH 连接到服务器,安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 1. 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 2. 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中,找到商店管理 安装 Mysql 版本5.7+ 不要打开外部访问 Gitea 安装与 SSH 配置 1. 安装 Gitea 打开外部端口访问, 域名可访问后记得关上\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare账号\n域名\nSSH 连接到服务器,安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中,找到商店管理 安装 Mysql 版本5.7+ 不要打开外部访问 Gitea 安装与 SSH 配置 ** 安装 Gitea** 打开外部端口访问, 域名可访问后记得关上\n">
 <title>搭建Gitea</title>
 
 <link rel='canonical' href='https://zxsos.github.io/p/%E6%90%AD%E5%BB%BAgitea/'>
 
 <link rel="stylesheet" href="/scss/style.min.29d9a9048cb3312f28d5136531655a5f10cae239921de69bfbf2fd4cb140474f.css"><meta property='og:title' content="搭建Gitea">
-<meta property='og:description' content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare账号\n域名\nSSH 连接到服务器,安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 1. 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 2. 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中,找到商店管理 安装 Mysql 版本5.7+ 不要打开外部访问 Gitea 安装与 SSH 配置 1. 安装 Gitea 打开外部端口访问, 域名可访问后记得关上\n">
+<meta property='og:description' content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare账号\n域名\nSSH 连接到服务器,安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中,找到商店管理 安装 Mysql 版本5.7+ 不要打开外部访问 Gitea 安装与 SSH 配置 ** 安装 Gitea** 打开外部端口访问, 域名可访问后记得关上\n">
 <meta property='og:url' content='https://zxsos.github.io/p/%E6%90%AD%E5%BB%BAgitea/'>
 <meta property='og:site_name' content='zxsos'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Git' /><meta property='article:published_time' content='2025-04-24T15:55:12&#43;08:00'/><meta property='article:modified_time' content='2025-04-24T15:55:12&#43;08:00'/><meta property='og:image' content='https://lsky.bangbang.site/h8QfhV.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Git' /><meta property='article:published_time' content='2025-04-24T15:55:12&#43;08:00'/><meta property='article:modified_time' content='2025-04-24T15:55:12&#43;08:00'/><meta property='og:image' content='https://lsky.bangbang.site/g/2025/04/24/680a5d62793f4.webp' />
 <meta name="twitter:title" content="搭建Gitea">
-<meta name="twitter:description" content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare账号\n域名\nSSH 连接到服务器,安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 1. 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 2. 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中,找到商店管理 安装 Mysql 版本5.7+ 不要打开外部访问 Gitea 安装与 SSH 配置 1. 安装 Gitea 打开外部端口访问, 域名可访问后记得关上\n"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://lsky.bangbang.site/h8QfhV.jpg' />
+<meta name="twitter:description" content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare账号\n域名\nSSH 连接到服务器,安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中,找到商店管理 安装 Mysql 版本5.7+ 不要打开外部访问 Gitea 安装与 SSH 配置 ** 安装 Gitea** 打开外部端口访问, 域名可访问后记得关上\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://lsky.bangbang.site/g/2025/04/24/680a5d62793f4.webp' />
     <link rel="shortcut icon" href="/favicon.ico" />
 
     </head>
@@ -256,8 +256,8 @@
         <li><a href="#debian"><strong>Debian</strong></a></li>
         <li><a href="#openeuler-其他系统"><strong>openEuler/ 其他系统</strong></a>
           <ol>
-            <li><a href="#1-安装-docker">1. 安装 docker</a></li>
-            <li><a href="#2-安装-1panel">2. 安装 1Panel</a></li>
+            <li><a href="#安装-docker">安装 docker</a></li>
+            <li><a href="#安装-1panel">安装 1Panel</a></li>
           </ol>
         </li>
       </ol>
@@ -267,11 +267,11 @@
         <li><a href="#安装-mysql"><strong>安装 Mysql</strong></a></li>
         <li><a href="#gitea-安装与-ssh-配置"><strong>Gitea 安装与 SSH 配置</strong></a>
           <ol>
-            <li><a href="#1-安装-gitea"><strong>1. 安装 Gitea</strong></a></li>
-            <li><a href="#2-修改-ssh-配置文件"><strong>2. 修改 SSH 配置文件</strong></a></li>
+            <li><a href="#-安装-gitea">** 安装 Gitea**</a></li>
+            <li><a href="#-修改-ssh-配置文件">** 修改 SSH 配置文件**</a></li>
           </ol>
         </li>
-        <li><a href="#3-gitea-配置">3. <strong>Gitea 配置</strong></a>
+        <li><a href="#gitea-配置"><strong>Gitea 配置</strong></a>
           <ol>
             <li><a href="#确认信息">确认信息</a></li>
             <li><a href="#开启电子邮件通知">开启电子邮件通知</a></li>
@@ -315,7 +315,7 @@
         <div class="article-image">
             <a href="/p/%E6%90%AD%E5%BB%BAgitea/">
                 
-                    <img src="https://lsky.bangbang.site/h8QfhV.jpg" loading="lazy" alt="Featured image of post 搭建Gitea" />
+                    <img src="https://lsky.bangbang.site/g/2025/04/24/680a5d62793f4.webp" loading="lazy" alt="Featured image of post 搭建Gitea" />
                 
             </a>
         </div>
@@ -433,7 +433,7 @@
 </div>
 </div><hr>
 <h3 id="openeuler-其他系统"><strong>openEuler/ 其他系统</strong>
-</h3><h4 id="1-安装-docker">1. 安装 docker
+</h3><h4 id="安装-docker">安装 docker
 </h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -442,7 +442,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -sSL https://linuxmirrors.cn/docker.sh
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="2-安装-1panel">2. 安装 1Panel
+</div><h4 id="安装-1panel">安装 1Panel
 </h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -455,7 +455,8 @@
 <h2 id="浏览器进入-1panel-中找到商店管理"><strong>浏览器进入 1panel 中,找到商店管理</strong>
 </h2><h3 id="安装-mysql"><strong>安装 Mysql</strong>
 </h3><ul>
-<li>版本5.7+ 不要打开外部访问 <img src="https://lsky.bangbang.site/NPazRm.png"
+<li>版本5.7+ 不要打开外部访问</li>
+<li><img src="https://lsky.bangbang.site/i/2025/04/19/680295eac9de1.png"
 	
 	
 	
@@ -464,7 +465,8 @@
 		alt="image.png"
 	
 	
-> <img src="https://lsky.bangbang.site/P0FXvl.png"
+></li>
+<li><img src="https://lsky.bangbang.site/i/2025/04/19/6802944cdf187.png"
 	
 	
 	
@@ -476,8 +478,8 @@
 ></li>
 </ul>
 <h3 id="gitea-安装与-ssh-配置"><strong>Gitea 安装与 SSH 配置</strong>
-</h3><h4 id="1-安装-gitea"><strong>1. 安装 Gitea</strong>
-</h4><p><img src="https://lsky.bangbang.site/CLRgM3.png"
+</h3><h4 id="-安装-gitea">** 安装 Gitea**
+</h4><p><img src="https://lsky.bangbang.site/i/2025/04/19/6802963007595.png"
 	
 	
 	
@@ -486,7 +488,7 @@
 		alt="image.png"
 	
 	
-> <img src="https://lsky.bangbang.site/Ie8wqI.png"
+><img src="https://lsky.bangbang.site/i/2025/04/19/68029658d18f0.png"
 	
 	
 	
@@ -497,9 +499,9 @@
 	
 > 打开外部端口访问, <font color="#ff0000">域名可访问后记得关上</font></p>
 <ul>
-<li><strong>SSH 端口建议</strong>： 推荐使用默认端口 <code>22</code>，若选择其他端口（如 <code>222</code> ），后续 Git 操作需使用格式： <code>git@XX:222</code>  若可接受此格式可跳过修改到此处 <a class="link" href="#jump" >点击跳转</a></li>
+<li><strong>SSH 端口建议</strong>： 推荐使用默认端口 <code>22</code>，若选择其他端口（如 <code>222</code> ），后续 Git 操作需使用格式： <code>git@XX:222</code>  若可接受此格式可跳过修改 SSH 部分</li>
 </ul>
-<h4 id="2-修改-ssh-配置文件"><strong>2. 修改 SSH 配置文件</strong>
+<h4 id="-修改-ssh-配置文件">** 修改 SSH 配置文件**
 </h4><h5 id="使用编辑器打开配置文件">使用编辑器打开配置文件：
 </h5><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -516,22 +518,15 @@
 改为
 Port 2223</p></blockquote>
 <ul>
-<li>
-<p>vim 操作说明：</p>
+<li>vim 操作说明：
 <ul>
-<li>
-<p>按 <code>i</code> 进入编辑模式</p>
-</li>
-<li>
-<p>删除 <code>#</code> 取消注释</p>
-</li>
-<li>
-<p>修改端口号后，按 <code>ESC</code> → 输入 <code>:wq</code> 保存退出</p>
-</li>
+<li>按 <code>i</code> 进入编辑模式</li>
+<li>删除 <code>#</code> 取消注释</li>
+<li>修改端口号后，按 <code>ESC</code> → 输入 <code>:wq</code> 保存退出</li>
 </ul>
 </li>
 </ul>
-<h5 id="3-重启-ssh-服务">3. 重启 SSH 服务
+<h5 id="重启-ssh-服务">重启 SSH 服务
 </h5><p> </p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -541,10 +536,10 @@ Port 2223</p></blockquote>
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">  sudo systemctl restart sshd
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="3-gitea-配置">3. <strong>Gitea 配置</strong>
+</div><h3 id="gitea-配置"><strong>Gitea 配置</strong>
 </h3><p><span id="jump">跳过端口修改</span>
 默认是 <code>ip:3000</code> 以下部分可以不用修改
-<img src="https://lsky.bangbang.site/84zuyr.png"
+<img src="https://lsky.bangbang.site/i/2025/04/19/6802a8e88b10e.png"
 	
 	
 	
@@ -555,7 +550,7 @@ Port 2223</p></blockquote>
 	
 ></p>
 <h4 id="确认信息">确认信息
-</h4><p><img src="https://lsky.bangbang.site/ZIa2pb.png"
+</h4><p><img src="https://lsky.bangbang.site/i/2025/04/19/6802aa7142011.png"
 	
 	
 	
@@ -570,7 +565,7 @@ Port 2223</p></blockquote>
     >知乎-如何开启QQ SMTP</a>
 可使用第三方 <a class="link" href="https://www.mailersend.com/"  target="_blank" rel="noopener"
     >Email Sending Service</a>
-<img src="https://lsky.bangbang.site/ecQorG.png"
+<img src="https://lsky.bangbang.site/i/2025/04/19/6802aaa39e8ad.png"
 	
 	
 	
@@ -581,7 +576,7 @@ Port 2223</p></blockquote>
 	
 ></p>
 <h4 id="创建管理员账号">创建管理员账号
-</h4><p><img src="https://lsky.bangbang.site/cpuFbt.png"
+</h4><p><img src="https://lsky.bangbang.site/i/2025/04/19/6802abd513e56.png"
 	
 	
 	
@@ -593,9 +588,9 @@ Port 2223</p></blockquote>
 ></p>
 <h2 id="打开cloudflare"><strong>打开</strong><a class="link" href="https://www.cloudflare-cn.com/"  target="_blank" rel="noopener"
     ><strong>Cloudflare</strong></a>
-</h2><p>如果域名商有免费SSL证书, 那就用 ,跳过这步,主要是泛域名太贵,cf可以免费,如果你只搭建Gitea那么推荐到原服务商获取证书</p>
+</h2><p>如果域名商有免费SSL证书, 那就用 ,跳过这步,主要是泛域名太贵,cf可以免费,如果你只搭建Gitea那么推荐到原服务商获取证书,或者在 1panel 获取SSl证书</p>
 <h3 id="添加域">添加域
-</h3><p><img src="https://lsky.bangbang.site/2hz3mu.png"
+</h3><p><img src="https://lsky.bangbang.site/i/2025/04/19/6802afdc5cd8c.png"
 	
 	
 	
@@ -607,7 +602,7 @@ Port 2223</p></blockquote>
 ></p>
 <h4 id="修改dns">修改DNS
 </h4><p>按提示修改服务商 默认DNS为CF的DNS 解析域名,由于SSH的局限性不使用代理,打开代理后SSH连接到的是代理主机
-<img src="https://lsky.bangbang.site/rpJNcT.png"
+<img src="https://lsky.bangbang.site/i/2025/04/21/680520f0c3723.png"
 	
 	
 	
@@ -619,7 +614,7 @@ Port 2223</p></blockquote>
 ></p>
 <h4 id="ssl证书">SSL证书
 </h4><p>创建证书 -&gt; 下载证书
-<img src="https://lsky.bangbang.site/r9SurR.png"
+<img src="https://lsky.bangbang.site/i/2025/04/19/6802b1515e381.png"
 	
 	
 	
@@ -630,7 +625,7 @@ Port 2223</p></blockquote>
 	
 >
 修改加密为完全(严格)
-<img src="https://lsky.bangbang.site/YSTTd2.png"
+<img src="https://lsky.bangbang.site/i/2025/04/19/6802b3b2522da.png"
 	
 	
 	
@@ -642,7 +637,7 @@ Port 2223</p></blockquote>
 ></p>
 <h4 id="导入证书">导入证书
 </h4><p>拿到证书后回到1panel 点击 <strong>网站</strong>-&gt;<strong>证书</strong>-&gt;<strong>上传证书</strong> 填写信息或导入
-<img src="https://lsky.bangbang.site/dDLKez.png"
+<img src="https://lsky.bangbang.site/i/2025/04/19/6802b236ba18a.png"
 	
 	
 	
@@ -654,7 +649,7 @@ Port 2223</p></blockquote>
 ></p>
 <h4 id="反向代理">反向代理
 </h4><p>然后点击 <strong>网站</strong> -&gt; <strong>创建</strong> , 选择反向代理
-<img src="https://lsky.bangbang.site/RP9jXw.png"
+<img src="https://lsky.bangbang.site/i/2025/04/19/6802b2dc1dbd8.png"
 	
 	
 	
@@ -666,7 +661,7 @@ Port 2223</p></blockquote>
 ></p>
 <h4 id="开启https">开启HTTPS
 </h4><p>确定后点击网站 <strong>配置</strong> 开启HTTPS,
-<img src="https://lsky.bangbang.site/VwSPkk.png"
+<img src="https://lsky.bangbang.site/i/2025/04/19/6802b34536855.png"
 	
 	
 	
@@ -679,17 +674,7 @@ Port 2223</p></blockquote>
 <p>到此结束 可以通过域名正常访问了,也可以通过 SSH 拉取推送</p>
 <h2 id="测试一下">测试一下
 </h2><h3 id="添加公钥">添加公钥
-</h3><p><img src="https://lsky.bangbang.site/zFN0YH.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image.png"
-	
-	
-></p>
-<h3 id="本地命令行输入">本地命令行输入
+</h3><h3 id="本地命令行输入">本地命令行输入
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -700,7 +685,6 @@ Port 2223</p></blockquote>
 </div>
 </div><p>如果出现以下返回就没问题了
 <code>Hi there, XXXX! You've successfully authenticated with the key named Gitea, but Gitea does not provide shell access.</code></p>
-<p>本文原载于bangbang.site，复制请保留原文出处。</p>
 
 </section>
 
@@ -762,7 +746,7 @@ Port 2223</p></blockquote>
         
             <div class="article-image">
                 
-                    <img src="https://lsky.bangbang.site/ezJWTr.jpg" loading="lazy" data-key="Test" data-hash="https://lsky.bangbang.site/ezJWTr.jpg"/>
+                    <img src="https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp" loading="lazy" data-key="Test" data-hash="https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp"/>
                 
             </div>
         
@@ -781,7 +765,7 @@ Port 2223</p></blockquote>
         
             <div class="article-image">
                 
-                    <img src="https://lsky.bangbang.site/pAicDv.jpg" loading="lazy" data-key="Git修改" data-hash="https://lsky.bangbang.site/pAicDv.jpg"/>
+                    <img src="https://lsky.bangbang.site/g/2025/04/24/680a5d9bacf59.webp" loading="lazy" data-key="Git修改" data-hash="https://lsky.bangbang.site/g/2025/04/24/680a5d9bacf59.webp"/>
                 
             </div>
         
