@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare账号\n域名\nSSH 连接到服务器,安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中,找到商店管理 安装 Mysql 版本5.7+ 不要打开外部访问 Gitea 安装与 SSH 配置 ** 安装 Gitea** 打开外部端口访问, 域名可访问后记得关上\n">
+<title>Gitea搭建</title>
+
+<link rel='canonical' href='http://localhost:1313/p/gitea%E6%90%AD%E5%BB%BA/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Gitea搭建">
+<meta property='og:description' content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare账号\n域名\nSSH 连接到服务器,安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中,找到商店管理 安装 Mysql 版本5.7+ 不要打开外部访问 Gitea 安装与 SSH 配置 ** 安装 Gitea** 打开外部端口访问, 域名可访问后记得关上\n">
+<meta property='og:url' content='http://localhost:1313/p/gitea%E6%90%AD%E5%BB%BA/'>
+<meta property='og:site_name' content='zxsos'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='笔记' /><meta property='article:published_time' content='2025-04-24T15:18:56&#43;08:00'/><meta property='article:modified_time' content='2025-04-24T15:18:56&#43;08:00'/><meta property='og:image' content='http://localhost:1313/static/' />
+<meta name="twitter:title" content="Gitea搭建">
+<meta name="twitter:description" content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare账号\n域名\nSSH 连接到服务器,安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中,找到商店管理 安装 Mysql 版本5.7+ 不要打开外部访问 Gitea 安装与 SSH 配置 ** 安装 Gitea** 打开外部端口访问, 域名可访问后记得关上\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/static/' />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_74c49b0c5084bd58.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">zxsos</a></h1>
+            <h2 class="site-description">hello.</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/zxsos'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#准备">准备</a></li>
+    <li><a href="#ssh-连接到服务器安装-1panel"><strong>SSH 连接到服务器,安装 1panel</strong></a>
+      <ol>
+        <li><a href="#redhatcentos"><strong>RedHat/CentOS</strong></a></li>
+        <li><a href="#ubuntu"><strong>Ubuntu</strong></a></li>
+        <li><a href="#debian"><strong>Debian</strong></a></li>
+        <li><a href="#openeuler-其他系统"><strong>openEuler/ 其他系统</strong></a>
+          <ol>
+            <li><a href="#安装-docker">安装 docker</a></li>
+            <li><a href="#安装-1panel">安装 1Panel</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#浏览器进入-1panel-中找到商店管理"><strong>浏览器进入 1panel 中,找到商店管理</strong></a>
+      <ol>
+        <li><a href="#安装-mysql"><strong>安装 Mysql</strong></a></li>
+        <li><a href="#gitea-安装与-ssh-配置"><strong>Gitea 安装与 SSH 配置</strong></a>
+          <ol>
+            <li><a href="#-安装-gitea">** 安装 Gitea**</a></li>
+            <li><a href="#修改-ssh-配置文件"><strong>修改 SSH 配置文件</strong></a></li>
+          </ol>
+        </li>
+        <li><a href="#gitea-配置"><strong>Gitea 配置</strong></a>
+          <ol>
+            <li><a href="#确认信息">确认信息</a></li>
+            <li><a href="#开启电子邮件通知">开启电子邮件通知</a></li>
+            <li><a href="#创建管理员账号">创建管理员账号</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#打开cloudflare"><strong>打开</strong><a href="https://www.cloudflare-cn.com/"><strong>Cloudflare</strong></a></a>
+      <ol>
+        <li><a href="#添加域">添加域</a>
+          <ol>
+            <li><a href="#修改dns">修改DNS</a></li>
+            <li><a href="#ssl证书">SSL证书</a></li>
+            <li><a href="#导入证书">导入证书</a></li>
+            <li><a href="#反向代理">反向代理</a></li>
+            <li><a href="#开启https">开启HTTPS</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#测试一下">测试一下</a>
+      <ol>
+        <li><a href="#添加公钥">添加公钥</a></li>
+        <li><a href="#本地命令行输入">本地命令行输入</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/gitea%E6%90%AD%E5%BB%BA/">
+                
+                    <img src="/static/" loading="lazy" alt="Featured image of post Gitea搭建" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%AC%94%E8%AE%B0/" >
+                笔记
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/gitea%E6%90%AD%E5%BB%BA/">Gitea搭建</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 24, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="1panel--gitea--docker--cloudflare--反代-教程"><strong>1panel + gitea + docker + cloudflare + 反代 教程</strong>
+</h1><h2 id="准备">准备
+</h2><blockquote>
+<ul>
+<li>
+<p>服务器</p>
+</li>
+<li>
+<p>Cloudflare账号</p>
+</li>
+<li>
+<p>域名</p>
+</li>
+</ul></blockquote>
+<hr>
+<h2 id="ssh-连接到服务器安装-1panel"><strong>SSH 连接到服务器,安装 1panel</strong>
+</h2><h3 id="redhatcentos"><strong>RedHat/CentOS</strong>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh <span class="o">&amp;&amp;</span> sh quick_start.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h3 id="ubuntu"><strong>Ubuntu</strong>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh <span class="o">&amp;&amp;</span> sudo bash quick_start.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h3 id="debian"><strong>Debian</strong>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh <span class="o">&amp;&amp;</span> bash quick_start.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h3 id="openeuler-其他系统"><strong>openEuler/ 其他系统</strong>
+</h3><h4 id="安装-docker">安装 docker
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -sSL https://linuxmirrors.cn/docker.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="安装-1panel">安装 1Panel
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh <span class="o">&amp;&amp;</span> sh quick_start.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="浏览器进入-1panel-中找到商店管理"><strong>浏览器进入 1panel 中,找到商店管理</strong>
+</h2><h3 id="安装-mysql"><strong>安装 Mysql</strong>
+</h3><ul>
+<li>版本5.7+ 不要打开外部访问 <img src="https://lsky.bangbang.site/NPazRm.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+> <img src="https://lsky.bangbang.site/P0FXvl.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></li>
+</ul>
+<h3 id="gitea-安装与-ssh-配置"><strong>Gitea 安装与 SSH 配置</strong>
+</h3><h4 id="-安装-gitea">** 安装 Gitea**
+</h4><p><img src="https://lsky.bangbang.site/CLRgM3.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+> <img src="https://lsky.bangbang.site/Ie8wqI.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+> 打开外部端口访问, <font color="#ff0000">域名可访问后记得关上</font></p>
+<ul>
+<li><strong>SSH 端口建议</strong>： 推荐使用默认端口 <code>22</code>，若选择其他端口（如 <code>222</code> ），后续 Git 操作需使用格式： <code>git@XX:222</code> 若可接受此格式可跳过修改到此处 <a class="link" href="#jump" >点击跳转</a></li>
+</ul>
+<h4 id="修改-ssh-配置文件"><strong>修改 SSH 配置文件</strong>
+</h4><h5 id="使用编辑器打开配置文件">使用编辑器打开配置文件：
+</h5><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo vi /etc/ssh/sshd_config
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>或者在1panel 系统&gt;文件中打开(建议)</p>
+<h5 id="找到并修改端口参数取消注释">找到并修改端口参数,取消注释
+</h5><blockquote>
+<p># Port 22
+改为
+Port 2223</p></blockquote>
+<ul>
+<li>
+<p>vim 操作说明：</p>
+<ul>
+<li>
+<p>按 <code>i</code> 进入编辑模式</p>
+</li>
+<li>
+<p>删除 <code>#</code> 取消注释</p>
+</li>
+<li>
+<p>修改端口号后，按 <code>ESC</code> → 输入 <code>:wq</code> 保存退出</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="重启-ssh-服务">重启 SSH 服务
+</h5><p> </p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">  sudo systemctl restart sshd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="gitea-配置"><strong>Gitea 配置</strong>
+</h3><p>[跳过端口修改]{#jump}
+默认是 <code>ip:3000</code> 以下部分可以不用修改
+<img src="https://lsky.bangbang.site/84zuyr.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<h4 id="确认信息">确认信息
+</h4><p><img src="https://lsky.bangbang.site/ZIa2pb.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<h4 id="开启电子邮件通知">开启电子邮件通知
+</h4><p>这部分可参考 <a class="link" href="https://zhuanlan.zhihu.com/p/643897161"  target="_blank" rel="noopener"
+    >知乎-如何开启QQ SMTP</a>
+可使用第三方 <a class="link" href="https://www.mailersend.com/"  target="_blank" rel="noopener"
+    >Email Sending Service</a>
+<img src="https://lsky.bangbang.site/ecQorG.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<h4 id="创建管理员账号">创建管理员账号
+</h4><p><img src="https://lsky.bangbang.site/cpuFbt.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<h2 id="打开cloudflare"><strong>打开</strong><a class="link" href="https://www.cloudflare-cn.com/"  target="_blank" rel="noopener"
+    ><strong>Cloudflare</strong></a>
+</h2><p>如果域名商有SSL证书, 那就用,跳过这步,主要是泛域名和cf防护好,或者1panle里面也可以申请</p>
+<h3 id="添加域">添加域
+</h3><p><img src="https://lsky.bangbang.site/2hz3mu.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<h4 id="修改dns">修改DNS
+</h4><p>按提示修改服务商 默认DNS为CF的DNS 解析域名,由于SSH的局限性不使用代理,打开代理后SSH连接到的是代理主机
+<img src="https://lsky.bangbang.site/rpJNcT.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<h4 id="ssl证书">SSL证书
+</h4><p>创建证书 -&gt; 下载证书
+<img src="https://lsky.bangbang.site/r9SurR.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+>
+修改加密为完全(严格)
+<img src="https://lsky.bangbang.site/YSTTd2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<h4 id="导入证书">导入证书
+</h4><p>拿到证书后回到1panel 点击 <strong>网站</strong>-&gt;<strong>证书</strong>-&gt;<strong>上传证书</strong> 填写信息或导入
+<img src="https://lsky.bangbang.site/dDLKez.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<h4 id="反向代理">反向代理
+</h4><p>然后点击 <strong>网站</strong> -&gt; <strong>创建</strong> , 选择反向代理
+<img src="https://lsky.bangbang.site/RP9jXw.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<h4 id="开启https">开启HTTPS
+</h4><p>确定后点击网站 <strong>配置</strong> 开启HTTPS,
+<img src="https://lsky.bangbang.site/VwSPkk.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+>关闭Gitea外部端口访问,只允许域名访问</p>
+<p>到此结束 可以通过域名正常访问了,也可以通过 SSH 拉取推送</p>
+<h2 id="测试一下">测试一下
+</h2><h3 id="添加公钥">添加公钥
+</h3><p><img src="https://lsky.bangbang.site/zFN0YH.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image.png"
+	
+	
+></p>
+<h3 id="本地命令行输入">本地命令行输入
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">SSH -T git@域名
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果出现以下返回就没问题了
+<code>Hi there, XXXX! You've successfully authenticated with the key named Gitea, but Gitea does not provide shell access.</code></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 zxsos
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.f88f85d04de95e58d148749b840f5f9029aaac50f66ccf67bef8a0205a074823.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

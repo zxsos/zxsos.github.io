@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Test on zxsos</title>
+        <link>http://localhost:1313/tags/test/</link>
+        <description>Recent content in Test on zxsos</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>zxsos</copyright>
+        <lastBuildDate>Thu, 24 Apr 2025 14:27:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/test/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>test</title>
+        <link>http://localhost:1313/p/test/</link>
+        <pubDate>Thu, 24 Apr 2025 14:27:24 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/test/</guid>
+        <description>&lt;h2 id=&#34;附录&#34;&gt;附录
+&lt;/h2&gt;&lt;h3 id=&#34;参考文章&#34;&gt;参考文章
+&lt;/h3&gt;&lt;h3 id=&#34;版权信息&#34;&gt;版权信息
+&lt;/h3&gt;&lt;p&gt;本文原载于bangbang.com，复制请保留原文出处。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
