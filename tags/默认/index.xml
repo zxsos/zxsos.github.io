@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>默认 on zxsos</title>
-        <link>http://localhost:1313/tags/%E9%BB%98%E8%AE%A4/</link>
+        <link>https://zxsos.github.io/tags/%E9%BB%98%E8%AE%A4/</link>
         <description>Recent content in 默认 on zxsos</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>zxsos</copyright>
-        <lastBuildDate>Thu, 24 Apr 2025 15:55:12 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E9%BB%98%E8%AE%A4/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 24 Apr 2025 15:55:12 +0800</lastBuildDate><atom:link href="https://zxsos.github.io/tags/%E9%BB%98%E8%AE%A4/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>搭建Gitea</title>
-        <link>http://localhost:1313/p/%E6%90%AD%E5%BB%BAgitea/</link>
+        <link>https://zxsos.github.io/p/%E6%90%AD%E5%BB%BAgitea/</link>
         <pubDate>Thu, 24 Apr 2025 15:55:12 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E6%90%AD%E5%BB%BAgitea/</guid>
+        <guid>https://zxsos.github.io/p/%E6%90%AD%E5%BB%BAgitea/</guid>
         <description>&lt;img src="https://lsky.bangbang.site/Gu2K2q.png" alt="Featured image of post 搭建Gitea" /&gt;&lt;h1 id=&#34;1panel--gitea--docker--cloudflare--反代-教程&#34;&gt;&lt;strong&gt;1panel + gitea + docker + cloudflare + 反代 教程&lt;/strong&gt;
 &lt;/h1&gt;&lt;h2 id=&#34;准备&#34;&gt;准备
 &lt;/h2&gt;&lt;blockquote&gt;

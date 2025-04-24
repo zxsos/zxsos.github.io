@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://zxsos.github.io/</loc>
     <lastmod>2025-04-24T15:55:12+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://zxsos.github.io/categories/</loc>
     <lastmod>2025-04-24T15:55:12+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/</loc>
+    <loc>https://zxsos.github.io/post/</loc>
     <lastmod>2025-04-24T15:55:12+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://zxsos.github.io/tags/</loc>
     <lastmod>2025-04-24T15:55:12+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/p/%E6%90%AD%E5%BB%BAgitea/</loc>
+    <loc>https://zxsos.github.io/p/%E6%90%AD%E5%BB%BAgitea/</loc>
     <lastmod>2025-04-24T15:55:12+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E9%BB%98%E8%AE%A4/</loc>
+    <loc>https://zxsos.github.io/categories/%E9%BB%98%E8%AE%A4/</loc>
     <lastmod>2025-04-24T15:55:12+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E9%BB%98%E8%AE%A4/</loc>
+    <loc>https://zxsos.github.io/tags/%E9%BB%98%E8%AE%A4/</loc>
     <lastmod>2025-04-24T15:55:12+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/page/</loc>
+    <loc>https://zxsos.github.io/page/</loc>
     <lastmod>2025-04-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/archives/</loc>
+    <loc>https://zxsos.github.io/archives/</loc>
     <lastmod>2025-04-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/links/</loc>
+    <loc>https://zxsos.github.io/links/</loc>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://zxsos.github.io/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://zxsos.github.io/search/</loc>
   </url>
 </urlset>
