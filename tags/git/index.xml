@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>默认 on zxsos</title>
-        <link>https://zxsos.github.io/tags/%E9%BB%98%E8%AE%A4/</link>
-        <description>Recent content in 默认 on zxsos</description>
+        <title>Git on zxsos</title>
+        <link>https://zxsos.github.io/tags/git/</link>
+        <description>Recent content in Git on zxsos</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>zxsos</copyright>
-        <lastBuildDate>Thu, 24 Apr 2025 15:55:12 +0800</lastBuildDate><atom:link href="https://zxsos.github.io/tags/%E9%BB%98%E8%AE%A4/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 24 Apr 2025 15:55:12 +0800</lastBuildDate><atom:link href="https://zxsos.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>搭建Gitea</title>
         <link>https://zxsos.github.io/p/%E6%90%AD%E5%BB%BAgitea/</link>
         <pubDate>Thu, 24 Apr 2025 15:55:12 +0800</pubDate>
