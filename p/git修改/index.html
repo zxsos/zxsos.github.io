@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zxsos.github.io/p/git%E4%BF%AE%E6%94%B9/'>
 
-<link rel="stylesheet" href="/scss/style.min.20985437026ee4824e82359b8985be7a84d4cb7ce4c393e79d8dbf69f71422ae.css"><meta property='og:title' content="Git修改">
+<link rel="stylesheet" href="/scss/style.min.47444e5c40c575008cedcf4d02f3f052315cf0a8d2a28c14492ba4a3dff2eff4.css"><meta property='og:title' content="Git修改">
 <meta property='og:description' content="修改仓库所有者和修改commit信息 (不会更改时间线)\n1 git filter-branch -f --env-filter &#39; GIT_AUTHOR_NAME=&#34;zxsos&#34; GIT_AUTHOR_EMAIL=&#34;my@domain&#34; GIT_COMMITTER_NAME=&#34;zxsos&#34; GIT_COMMITTER_EMAIL=&#34;my@domain &#39; --tag-name-filter cat -- --branches --tags [!] 可能提示不安全被废弃\n更好的解决方案（bushi） 虽然可以继续用 filter-branch，但我强烈建议改用更安全的 git filter-repo：\n先安装（如果尚未安装）： 1 pip install git-filter-repo 执行更安全的修改： 1 git filter-repo --name-callback &#39;return b&#34;zxsos&#34;&#39; --email-callback &#39;return b&#34;my@domain&#34;&#39; 本文原载于bangbang.site，复制请保留原文出处。\n">
 <meta property='og:url' content='https://zxsos.github.io/p/git%E4%BF%AE%E6%94%B9/'>
 <meta property='og:site_name' content='zxsos'>
