@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zxsos.github.io/p/%E6%90%AD%E5%BB%BAgitea/'>
 
-<link rel="stylesheet" href="/scss/style.min.47444e5c40c575008cedcf4d02f3f052315cf0a8d2a28c14492ba4a3dff2eff4.css"><meta property='og:title' content="搭建Gitea">
+<link rel="stylesheet" href="/scss/style.min.54dbfcd8d4c8f2fb1402aa69eacc1a000a74831360ed4001fc867bf17d7f1afe.css"><meta property='og:title' content="搭建Gitea">
 <meta property='og:description' content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare 账号\n域名\n--- markmap: zoom: false pan: false height: 300px backgroundColor: &#34;#f8f8f8&#34; --- # **1panel &#43; gitea &#43; docker &#43; cloudflare &#43; 反代 教程** ## 准备 ## **SSH 连接到服务器, 安装 1panel** ### **RedHat/CentOS** ### **Ubuntu** ### **Debian** ### **openEuler/ 其他系统** #### 安装 docker #### 安装 1Panel ## **浏览器进入 1panel 中, 找到商店管理** ### **安装 Mysql** ### **Gitea 安装与 SSH 配置** #### **安装 Gitea** #### **修改 SSH 配置文件** ##### 使用编辑器打开配置文件： ##### 找到并修改端口参数, 取消注释 ##### 重启 SSH 服务 ### **Gitea 配置** #### 确认信息 #### 开启电子邮件通知 #### 创建管理员账号 ## **打开** [**Cloudflare**](https://www.cloudflare-cn.com/) ### 添加域 #### 修改 DNS #### SSL 证书 #### 导入证书 #### 反向代理 #### 开启 HTTPS ## 测试一下 ### 添加公钥 ### 本地命令行输入 SSH 连接到服务器, 安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中, 找到商店管理 安装 Mysql 版本 5.7+ 不要打开外部访问\n">
 <meta property='og:url' content='https://zxsos.github.io/p/%E6%90%AD%E5%BB%BAgitea/'>
 <meta property='og:site_name' content='zxsos'>
@@ -998,7 +998,12 @@ Port 2223</p></blockquote>
   width: 100%;
   height: 300px;
 }
+ 
+.markmap {
+    --markmap-text-color: auto;
+}
 </style>
+
 <script>
 window.markmap = {
   autoLoader: {
@@ -1027,6 +1032,15 @@ window.markmap = {
         crossorigin="anonymous"></script>
 <script src="/js/main.min.fbdec66cacd6b5009065ebd01c03d530ecb2311819e6a66309e11888916a1e5d.js" integrity="sha256-&#43;97GbKzWtQCQZevQHAPVMOyyMRgZ5qZjCeEYiJFqHl0=" crossorigin="anonymous"></script>
 
+<script src="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.css" crossorigin="anonymous" />
+<script>
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") NProgress.done();
+    });
+</script>
 
     </body>
 </html>

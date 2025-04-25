@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zxsos.github.io/p/telegram%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/'>
 
-<link rel="stylesheet" href="/scss/style.min.47444e5c40c575008cedcf4d02f3f052315cf0a8d2a28c14492ba4a3dff2eff4.css"><meta property='og:title' content="Telegram图床搭建">
+<link rel="stylesheet" href="/scss/style.min.54dbfcd8d4c8f2fb1402aa69eacc1a000a74831360ed4001fc867bf17d7f1afe.css"><meta property='og:title' content="Telegram图床搭建">
 <meta property='og:description' content="前置条件： Github 账号 CloudFlare 账号 Telegram 账号 Github 和 TG 都需要科学上网。\n--- markmap: zoom: false pan: false height: 300px backgroundColor: &#34;#f8f8f8&#34; --- # 前置条件： # github 设置 ## fork 仓库 ## 获取 Telegram 所需参数 ### 获得 `TG_BOT_TOKEN` ### 获取 `TG_CHAT_ID` # cloudflare 设置： ## Creat Page ## 选择刚刚 fork 的仓库 ## 设置 kv ## 绑定 kv ## 添加变量 ## RE 部署 ## 结束 github 设置 fork 仓库 进入 GitHub 项目主页：点击跳转，点击 fork\n">
 <meta property='og:url' content='https://zxsos.github.io/p/telegram%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/'>
 <meta property='og:site_name' content='zxsos'>
@@ -865,7 +865,12 @@ TG_CHAT_ID = tg 返回的频道信息里的频道 id</p></blockquote>
   width: 100%;
   height: 300px;
 }
+ 
+.markmap {
+    --markmap-text-color: auto;
+}
 </style>
+
 <script>
 window.markmap = {
   autoLoader: {
@@ -894,6 +899,15 @@ window.markmap = {
         crossorigin="anonymous"></script>
 <script src="/js/main.min.fbdec66cacd6b5009065ebd01c03d530ecb2311819e6a66309e11888916a1e5d.js" integrity="sha256-&#43;97GbKzWtQCQZevQHAPVMOyyMRgZ5qZjCeEYiJFqHl0=" crossorigin="anonymous"></script>
 
+<script src="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.css" crossorigin="anonymous" />
+<script>
+    NProgress.start();
+    document.addEventListener("readystatechange", () => {
+        if (document.readyState === "interactive") NProgress.inc(0.8);
+        if (document.readyState === "complete") NProgress.done();
+    });
+</script>
 
     </body>
 </html>
