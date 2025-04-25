@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare 账号\n域名\nSSH 连接到服务器, 安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中, 找到商店管理 安装 Mysql 版本 5.7+ 不要打开外部访问\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare 账号\n域名\n--- markmap: zoom: false pan: false height: 300px backgroundColor: &#34;#f8f8f8&#34; --- # **1panel &#43; gitea &#43; docker &#43; cloudflare &#43; 反代 教程** ## 准备 ## **SSH 连接到服务器, 安装 1panel** ### **RedHat/CentOS** ### **Ubuntu** ### **Debian** ### **openEuler/ 其他系统** #### 安装 docker #### 安装 1Panel ## **浏览器进入 1panel 中, 找到商店管理** ### **安装 Mysql** ### **Gitea 安装与 SSH 配置** #### **安装 Gitea** #### **修改 SSH 配置文件** ##### 使用编辑器打开配置文件： ##### 找到并修改端口参数, 取消注释 ##### 重启 SSH 服务 ### **Gitea 配置** #### 确认信息 #### 开启电子邮件通知 #### 创建管理员账号 ## **打开** [**Cloudflare**](https://www.cloudflare-cn.com/) ### 添加域 #### 修改 DNS #### SSL 证书 #### 导入证书 #### 反向代理 #### 开启 HTTPS ## 测试一下 ### 添加公钥 ### 本地命令行输入 SSH 连接到服务器, 安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中, 找到商店管理 安装 Mysql 版本 5.7+ 不要打开外部访问\n">
 <title>搭建Gitea</title>
 
 <link rel='canonical' href='https://zxsos.github.io/p/%E6%90%AD%E5%BB%BAgitea/'>
 
 <link rel="stylesheet" href="/scss/style.min.47444e5c40c575008cedcf4d02f3f052315cf0a8d2a28c14492ba4a3dff2eff4.css"><meta property='og:title' content="搭建Gitea">
-<meta property='og:description' content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare 账号\n域名\nSSH 连接到服务器, 安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中, 找到商店管理 安装 Mysql 版本 5.7+ 不要打开外部访问\n">
+<meta property='og:description' content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare 账号\n域名\n--- markmap: zoom: false pan: false height: 300px backgroundColor: &#34;#f8f8f8&#34; --- # **1panel &#43; gitea &#43; docker &#43; cloudflare &#43; 反代 教程** ## 准备 ## **SSH 连接到服务器, 安装 1panel** ### **RedHat/CentOS** ### **Ubuntu** ### **Debian** ### **openEuler/ 其他系统** #### 安装 docker #### 安装 1Panel ## **浏览器进入 1panel 中, 找到商店管理** ### **安装 Mysql** ### **Gitea 安装与 SSH 配置** #### **安装 Gitea** #### **修改 SSH 配置文件** ##### 使用编辑器打开配置文件： ##### 找到并修改端口参数, 取消注释 ##### 重启 SSH 服务 ### **Gitea 配置** #### 确认信息 #### 开启电子邮件通知 #### 创建管理员账号 ## **打开** [**Cloudflare**](https://www.cloudflare-cn.com/) ### 添加域 #### 修改 DNS #### SSL 证书 #### 导入证书 #### 反向代理 #### 开启 HTTPS ## 测试一下 ### 添加公钥 ### 本地命令行输入 SSH 连接到服务器, 安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中, 找到商店管理 安装 Mysql 版本 5.7+ 不要打开外部访问\n">
 <meta property='og:url' content='https://zxsos.github.io/p/%E6%90%AD%E5%BB%BAgitea/'>
 <meta property='og:site_name' content='zxsos'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Git' /><meta property='article:published_time' content='2025-04-24T15:55:12&#43;08:00'/><meta property='article:modified_time' content='2025-04-24T15:55:12&#43;08:00'/><meta property='og:image' content='https://lsky.bangbang.site/g/2025/04/24/680a5d62793f4.webp' />
 <meta name="twitter:title" content="搭建Gitea">
-<meta name="twitter:description" content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare 账号\n域名\nSSH 连接到服务器, 安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中, 找到商店管理 安装 Mysql 版本 5.7+ 不要打开外部访问\n"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare 账号\n域名\n--- markmap: zoom: false pan: false height: 300px backgroundColor: &#34;#f8f8f8&#34; --- # **1panel &#43; gitea &#43; docker &#43; cloudflare &#43; 反代 教程** ## 准备 ## **SSH 连接到服务器, 安装 1panel** ### **RedHat/CentOS** ### **Ubuntu** ### **Debian** ### **openEuler/ 其他系统** #### 安装 docker #### 安装 1Panel ## **浏览器进入 1panel 中, 找到商店管理** ### **安装 Mysql** ### **Gitea 安装与 SSH 配置** #### **安装 Gitea** #### **修改 SSH 配置文件** ##### 使用编辑器打开配置文件： ##### 找到并修改端口参数, 取消注释 ##### 重启 SSH 服务 ### **Gitea 配置** #### 确认信息 #### 开启电子邮件通知 #### 创建管理员账号 ## **打开** [**Cloudflare**](https://www.cloudflare-cn.com/) ### 添加域 #### 修改 DNS #### SSL 证书 #### 导入证书 #### 反向代理 #### 开启 HTTPS ## 测试一下 ### 添加公钥 ### 本地命令行输入 SSH 连接到服务器, 安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中, 找到商店管理 安装 Mysql 版本 5.7+ 不要打开外部访问\n"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://lsky.bangbang.site/g/2025/04/24/680a5d62793f4.webp' />
     <link rel="shortcut icon" href="/favicon.ico" />
+<script
+  src="https://code.jquery.com/jquery-latest.min.js"
+  crossorigin="anonymous"></script>
+
 
     </head>
     <body class="
@@ -401,6 +405,45 @@
 </li>
 </ul></blockquote>
 <hr>
+<pre class="markmap">---
+markmap:
+  zoom: false
+  pan: false
+  height: 300px
+  backgroundColor: &#34;#f8f8f8&#34;
+---
+
+# **1panel &#43; gitea &#43; docker &#43; cloudflare &#43; 反代 教程**
+## 准备
+## **SSH 连接到服务器, 安装 1panel**
+### **RedHat/CentOS**
+### **Ubuntu**
+### **Debian**
+### **openEuler/ 其他系统**
+#### 安装 docker
+#### 安装 1Panel
+## **浏览器进入 1panel 中, 找到商店管理**
+### **安装 Mysql**
+### **Gitea 安装与 SSH 配置**
+#### **安装 Gitea**
+#### **修改 SSH 配置文件**
+##### 使用编辑器打开配置文件：
+##### 找到并修改端口参数, 取消注释
+##### 重启 SSH 服务
+### **Gitea 配置**
+#### 确认信息
+#### 开启电子邮件通知
+#### 创建管理员账号
+## **打开** [**Cloudflare**](https://www.cloudflare-cn.com/)
+### 添加域
+#### 修改 DNS
+#### SSL 证书
+#### 导入证书
+#### 反向代理
+#### 开启 HTTPS
+## 测试一下
+### 添加公钥 
+### 本地命令行输入</pre>
 <h2 id="ssh-连接到服务器-安装-1panel"><strong>SSH 连接到服务器, 安装 1panel</strong>
 </h2><h3 id="redhatcentos"><strong>RedHat/CentOS</strong>
 </h3><div class="highlight"><div class="chroma">
@@ -688,91 +731,6 @@ Port 2223</p></blockquote>
 </div>
 </div><p>如果出现以下返回就没问题了
 <code>Hi there, XXXX! You've successfully authenticated with the key named Gitea, but Gitea does not provide shell access.</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">markmap:
-</span></span><span class="line"><span class="cl">  zoom: false
-</span></span><span class="line"><span class="cl">  pan: false
-</span></span><span class="line"><span class="cl">  height: 300px
-</span></span><span class="line"><span class="cl">  backgroundColor: &#34;#f8f8f8&#34;
-</span></span><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># **1panel + gitea + docker + cloudflare + 反代 教程**
-</span></span><span class="line"><span class="cl">## 准备
-</span></span><span class="line"><span class="cl">## **SSH 连接到服务器, 安装 1panel**
-</span></span><span class="line"><span class="cl">### **RedHat/CentOS**
-</span></span><span class="line"><span class="cl">### **Ubuntu**
-</span></span><span class="line"><span class="cl">### **Debian**
-</span></span><span class="line"><span class="cl">### **openEuler/ 其他系统**
-</span></span><span class="line"><span class="cl">#### 安装 docker
-</span></span><span class="line"><span class="cl">#### 安装 1Panel
-</span></span><span class="line"><span class="cl">## **浏览器进入 1panel 中, 找到商店管理**
-</span></span><span class="line"><span class="cl">### **安装 Mysql**
-</span></span><span class="line"><span class="cl">### **Gitea 安装与 SSH 配置**
-</span></span><span class="line"><span class="cl">#### **安装 Gitea**
-</span></span><span class="line"><span class="cl">#### **修改 SSH 配置文件**
-</span></span><span class="line"><span class="cl">##### 使用编辑器打开配置文件：
-</span></span><span class="line"><span class="cl">##### 找到并修改端口参数, 取消注释
-</span></span><span class="line"><span class="cl">##### 重启 SSH 服务
-</span></span><span class="line"><span class="cl">### **Gitea 配置**
-</span></span><span class="line"><span class="cl">#### 确认信息
-</span></span><span class="line"><span class="cl">#### 开启电子邮件通知
-</span></span><span class="line"><span class="cl">#### 创建管理员账号
-</span></span><span class="line"><span class="cl">## **打开** [**Cloudflare**](https://www.cloudflare-cn.com/)
-</span></span><span class="line"><span class="cl">### 添加域
-</span></span><span class="line"><span class="cl">#### 修改 DNS
-</span></span><span class="line"><span class="cl">#### SSL 证书
-</span></span><span class="line"><span class="cl">#### 导入证书
-</span></span><span class="line"><span class="cl">#### 反向代理
-</span></span><span class="line"><span class="cl">#### 开启 HTTPS
-</span></span><span class="line"><span class="cl">## 测试一下
-</span></span><span class="line"><span class="cl">### 添加公钥 
-</span></span><span class="line"><span class="cl">### 本地命令行输入
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>本文原载于 bangbang.com，复制请保留原文出处。</p>
 
 </section>
 
@@ -1035,15 +993,40 @@ Port 2223</p></blockquote>
         document.head.appendChild(customFont);
     }());
 </script>
-<script src="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.css" crossorigin="anonymous" />
+<style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
 <script>
-    NProgress.start();
-    document.addEventListener("readystatechange", () => {
-        if (document.readyState === "interactive") NProgress.inc(0.8);
-        if (document.readyState === "complete") NProgress.done();
-    });
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
 </script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"
+      crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"
+        crossorigin="anonymous">
+</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/mhchem.min.js"
+        crossorigin="anonymous">
+</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"
+       crossorigin="anonymous"
+       onload='renderMathInElement(document.body, null);'>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"
+        crossorigin="anonymous"></script>
+<script src="/js/main.min.fbdec66cacd6b5009065ebd01c03d530ecb2311819e6a66309e11888916a1e5d.js" integrity="sha256-&#43;97GbKzWtQCQZevQHAPVMOyyMRgZ5qZjCeEYiJFqHl0=" crossorigin="anonymous"></script>
+
 
     </body>
 </html>

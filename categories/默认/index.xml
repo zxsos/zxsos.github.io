@@ -19,9 +19,32 @@
 &lt;li&gt;CloudFlare 账号&lt;/li&gt;
 &lt;li&gt;Telegram 账号&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Github 和 TG 都需要科学上网，注册好。&lt;/p&gt;
-&lt;h1 id=&#34;github-设置&#34;&gt;github 设置：
-&lt;/h1&gt;&lt;p&gt;进入 GitHub 项目主页：&lt;a class=&#34;link&#34; href=&#34;https://github.com/MarSeventh/CloudFlare-ImgBed&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;p&gt;Github 和 TG 都需要科学上网。&lt;/p&gt;
+&lt;pre class=&#34;markmap&#34;&gt;---
+markmap:
+  zoom: false
+  pan: false
+  height: 300px
+  backgroundColor: &amp;#34;#f8f8f8&amp;#34;
+---
+
+# 前置条件：
+# github 设置
+## fork 仓库
+## 获取 Telegram 所需参数
+### 获得 `TG_BOT_TOKEN`
+### 获取 `TG_CHAT_ID`
+# cloudflare 设置：
+## Creat Page
+## 选择刚刚 fork 的仓库
+## 设置 kv
+## 绑定 kv
+## 添加变量
+## RE 部署
+## 结束&lt;/pre&gt;
+&lt;h2 id=&#34;github-设置&#34;&gt;github 设置
+&lt;/h2&gt;&lt;h3 id=&#34;fork-仓库&#34;&gt;fork 仓库
+&lt;/h3&gt;&lt;p&gt;进入 GitHub 项目主页：&lt;a class=&#34;link&#34; href=&#34;https://github.com/MarSeventh/CloudFlare-ImgBed&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;点击跳转&lt;/a&gt;，点击 fork&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/1745568849265_image-20250425161358693.png&#34;
 	
@@ -34,9 +57,9 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;不用设置，直接点击 create fork，到此 GitHub 的步骤就完毕可以不用管了。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;向 &lt;a class=&#34;link&#34; href=&#34;https://t.me/BotFather&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;h3 id=&#34;获取-telegram-所需参数&#34;&gt;获取 Telegram 所需参数
+&lt;/h3&gt;&lt;h4 id=&#34;获得-tg_bot_token&#34;&gt;获得 &lt;code&gt;TG_BOT_TOKEN&lt;/code&gt;
+&lt;/h4&gt;&lt;p&gt;向 &lt;a class=&#34;link&#34; href=&#34;https://t.me/BotFather&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;@BotFather&lt;/a&gt; 发送 &lt;code&gt;/newbot&lt;/code&gt;，按照提示输入 bot 的备注、用户名等信息。成功创建后获得 &lt;code&gt;TG_BOT_TOKEN&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://github.com/zxsos/CloudFlare-ImgBed/raw/main/static/readme/202409071744569.png&#34;
 	
@@ -48,9 +71,10 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;创建一个新的频道（Channel），进入新建的频道，选择频道管理，将刚才创建的机器人设为频道管理员。&lt;/p&gt;
+&lt;h4 id=&#34;获取-tg_chat_id&#34;&gt;获取 &lt;code&gt;TG_CHAT_ID&lt;/code&gt;
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;创建一个新的频道（Channel），进入新建的频道，选择频道管理，将刚才创建的机器人设为频道管理员。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/zxsos/CloudFlare-ImgBed/blob/main/static/readme/202409071758534.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;img src=&#34;https://github.com/zxsos/CloudFlare-ImgBed/raw/main/static/readme/202409071758534.png&#34;
 	
@@ -61,7 +85,8 @@
 		alt=&#34;img&#34;
 	
 	
-&gt;&lt;/a&gt; &lt;a class=&#34;link&#34; href=&#34;https://github.com/zxsos/CloudFlare-ImgBed/blob/main/static/readme/202409071758796.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&gt;&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/zxsos/CloudFlare-ImgBed/blob/main/static/readme/202409071758796.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;img src=&#34;https://github.com/zxsos/CloudFlare-ImgBed/raw/main/static/readme/202409071758796.png&#34;
 	
 	
@@ -71,7 +96,8 @@
 		alt=&#34;img&#34;
 	
 	
-&gt;&lt;/a&gt; &lt;a class=&#34;link&#34; href=&#34;https://github.com/zxsos/CloudFlare-ImgBed/blob/main/static/readme/202410291531473.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&gt;&lt;/a&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://github.com/zxsos/CloudFlare-ImgBed/blob/main/static/readme/202410291531473.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;img src=&#34;https://github.com/zxsos/CloudFlare-ImgBed/raw/main/static/readme/202410291531473.png&#34;
 	
 	
@@ -82,10 +108,10 @@
 	
 	
 &gt;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;向 &lt;a class=&#34;link&#34; href=&#34;https://t.me/VersaToolsBot&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;@VersaToolsBot&lt;/a&gt; &lt;strong&gt;转发&lt;/strong&gt; 一条第 2 步新建频道中的消息，获取 &lt;code&gt;TG_CHAT_ID&lt;/code&gt;（频道 ID）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;向 &lt;a class=&#34;link&#34; href=&#34;https://t.me/VersaToolsBot&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;@VersaToolsBot&lt;/a&gt; &lt;strong&gt;转发&lt;/strong&gt; 一条第 2 步新建频道中的消息，获取 &lt;code&gt;TG_CHAT_ID&lt;/code&gt;（频道 ID）&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;img src=&#34;https://github.com/zxsos/CloudFlare-ImgBed/raw/main/static/readme/202409071751619.png&#34;
 	
 	
@@ -96,10 +122,9 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;cloudflare-设置&#34;&gt;cloudflare 设置：
-&lt;/h1&gt;&lt;p&gt;打开 cloudflare，点击左边的 work&amp;amp;page，接着点击 creat：&lt;/p&gt;
+&lt;h2 id=&#34;cloudflare-设置&#34;&gt;cloudflare 设置：
+&lt;/h2&gt;&lt;h3 id=&#34;creat-page&#34;&gt;Creat Page
+&lt;/h3&gt;&lt;p&gt;打开 cloudflare，点击左边的 work&amp;amp;page，接着点击 creat：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/1745569093715_image-20250425161803692.png&#34;
 	
 	
@@ -110,8 +135,8 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;选择刚刚 fork 的仓库&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMaZt_aSJIeg1068G1YWWxxXEuNLBYAAuW9MRt2LwFXPykLVKYQH-YBAAMCAAN5AAM2BA.png&#34;
+&lt;h3 id=&#34;选择刚刚-fork-的仓库&#34;&gt;选择刚刚 fork 的仓库
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMaZt_aSJIeg1068G1YWWxxXEuNLBYAAuW9MRt2LwFXPykLVKYQH-YBAAMCAAN5AAM2BA.png&#34;
 	
 	
 	
@@ -122,8 +147,8 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;点击 setup，下一个页面不需要设置，直接点击下一步直至部署完成。&lt;/p&gt;
-&lt;p&gt;下面设置 kv：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMQZt_UCOIq62fE0z5bFN5aaodKwGMAAte9MRt2LwFXH2nrhstgnPYBAAMCAAN3AAM2BA.png&#34;
+&lt;h3 id=&#34;设置-kv&#34;&gt;设置 kv
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMQZt_UCOIq62fE0z5bFN5aaodKwGMAAte9MRt2LwFXH2nrhstgnPYBAAMCAAN3AAM2BA.png&#34;
 	
 	
 	
@@ -144,7 +169,8 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;回到 workpage，点击自己项目进去 setting，找到下图的位置，添加 img_url，绑定到刚才添加的 kv：&lt;/p&gt;
+&lt;h3 id=&#34;绑定-kv&#34;&gt;绑定 kv
+&lt;/h3&gt;&lt;p&gt;回到 workpage，点击自己项目进去 setting，找到下图的位置，添加 img_url，绑定到刚才添加的 kv：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMSZt_VHhOYAYVnWASRZAR69NpdxcEAAtq9MRt2LwFX5M8zmrlxzbIBAAMCAAN3AAM2BA.png&#34;
 	
 	
@@ -155,12 +181,13 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;接下来添加变量：
-AUTH_CODE = 进入图床的验证码
+&lt;h3 id=&#34;添加变量&#34;&gt;添加变量
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;AUTH_CODE = 进入图床的验证码
 BASIC_PASS = 后台管理密码
 BASIC_USER = 后台管理用户名
 TG_BOT_TOKEN = 刚才让记下的添加的机器人的 api
-TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;
+TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMUZt_WeOiS1PC1O_in6opg5keBJGcAAt29MRt2LwFX97SwRlyIOBQBAAMCAAN3AAM2BA.png&#34;
 	
 	
@@ -171,7 +198,8 @@ TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;再重新部署一遍，就能使用了：&lt;/p&gt;
+&lt;h3 id=&#34;re-部署&#34;&gt;RE 部署
+&lt;/h3&gt;&lt;p&gt;再重新部署一遍，就能使用了：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMbZt_a5_2Vx4mJGSumLexWmo1QLfsAAue9MRt2LwFXXJZYpq5jVNABAAMCAAN3AAM2BA.png&#34;
 	
 	
@@ -205,7 +233,8 @@ TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;至此大功告成，输入域名就能访问了：&lt;/p&gt;
+&lt;h3 id=&#34;结束&#34;&gt;结束
+&lt;/h3&gt;&lt;p&gt;至此大功告成，输入域名就能访问了：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMYZt_YbpwZKdUU--13sxHLaswWjFEAAuK9MRt2LwFXp4AQswMc1FUBAAMCAAN3AAM2BA.png&#34;
 	
 	
@@ -261,8 +290,7 @@ TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git filter-repo --name-callback &lt;span class=&#34;s1&#34;&gt;&amp;#39;return b&amp;#34;zxsos&amp;#34;&amp;#39;&lt;/span&gt; --email-callback &lt;span class=&#34;s1&#34;&gt;&amp;#39;return b&amp;#34;my@domain&amp;#34;&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;本文原载于 bangbang.site，复制请保留原文出处。&lt;/p&gt;
-</description>
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>搭建Gitea</title>
@@ -285,6 +313,45 @@ TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;&lt;/blockquote&gt;
 &lt;hr&gt;
+&lt;pre class=&#34;markmap&#34;&gt;---
+markmap:
+  zoom: false
+  pan: false
+  height: 300px
+  backgroundColor: &amp;#34;#f8f8f8&amp;#34;
+---
+
+# **1panel &amp;#43; gitea &amp;#43; docker &amp;#43; cloudflare &amp;#43; 反代 教程**
+## 准备
+## **SSH 连接到服务器, 安装 1panel**
+### **RedHat/CentOS**
+### **Ubuntu**
+### **Debian**
+### **openEuler/ 其他系统**
+#### 安装 docker
+#### 安装 1Panel
+## **浏览器进入 1panel 中, 找到商店管理**
+### **安装 Mysql**
+### **Gitea 安装与 SSH 配置**
+#### **安装 Gitea**
+#### **修改 SSH 配置文件**
+##### 使用编辑器打开配置文件：
+##### 找到并修改端口参数, 取消注释
+##### 重启 SSH 服务
+### **Gitea 配置**
+#### 确认信息
+#### 开启电子邮件通知
+#### 创建管理员账号
+## **打开** [**Cloudflare**](https://www.cloudflare-cn.com/)
+### 添加域
+#### 修改 DNS
+#### SSL 证书
+#### 导入证书
+#### 反向代理
+#### 开启 HTTPS
+## 测试一下
+### 添加公钥 
+### 本地命令行输入&lt;/pre&gt;
 &lt;h2 id=&#34;ssh-连接到服务器-安装-1panel&#34;&gt;&lt;strong&gt;SSH 连接到服务器, 安装 1panel&lt;/strong&gt;
 &lt;/h2&gt;&lt;h3 id=&#34;redhatcentos&#34;&gt;&lt;strong&gt;RedHat/CentOS&lt;/strong&gt;
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -572,91 +639,6 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如果出现以下返回就没问题了
 &lt;code&gt;Hi there, XXXX! You&#39;ve successfully authenticated with the key named Gitea, but Gitea does not provide shell access.&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;markmap:
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  zoom: false
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  pan: false
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  height: 300px
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  backgroundColor: &amp;#34;#f8f8f8&amp;#34;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;---
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# **1panel + gitea + docker + cloudflare + 反代 教程**
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;## 准备
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;## **SSH 连接到服务器, 安装 1panel**
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;### **RedHat/CentOS**
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;### **Ubuntu**
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;### **Debian**
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;### **openEuler/ 其他系统**
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#### 安装 docker
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#### 安装 1Panel
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;## **浏览器进入 1panel 中, 找到商店管理**
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;### **安装 Mysql**
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;### **Gitea 安装与 SSH 配置**
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#### **安装 Gitea**
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#### **修改 SSH 配置文件**
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;##### 使用编辑器打开配置文件：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;##### 找到并修改端口参数, 取消注释
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;##### 重启 SSH 服务
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;### **Gitea 配置**
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#### 确认信息
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#### 开启电子邮件通知
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#### 创建管理员账号
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;## **打开** [**Cloudflare**](https://www.cloudflare-cn.com/)
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;### 添加域
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#### 修改 DNS
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#### SSL 证书
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#### 导入证书
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#### 反向代理
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#### 开启 HTTPS
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;## 测试一下
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;### 添加公钥 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;### 本地命令行输入
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;本文原载于 bangbang.com，复制请保留原文出处。&lt;/p&gt;
 </description>
         </item>
         

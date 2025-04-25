@@ -14,6 +14,10 @@
 <meta name="twitter:title" content="404 Page not found">
 <meta name="twitter:description" content="hello.">
     <link rel="shortcut icon" href="/favicon.ico" />
+<script
+  src="https://code.jquery.com/jquery-latest.min.js"
+  crossorigin="anonymous"></script>
+
 
     </head>
     <body class="">
@@ -293,15 +297,40 @@
         document.head.appendChild(customFont);
     }());
 </script>
-<script src="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://npm.elemecdn.com/nprogress@0.2.0/nprogress.css" crossorigin="anonymous" />
+<style>
+.markmap > svg {
+  width: 100%;
+  height: 300px;
+}
+</style>
 <script>
-    NProgress.start();
-    document.addEventListener("readystatechange", () => {
-        if (document.readyState === "interactive") NProgress.inc(0.8);
-        if (document.readyState === "complete") NProgress.done();
-    });
+window.markmap = {
+  autoLoader: {
+      manual: true,
+      onReady() {
+        const { autoLoader, builtInPlugins } = window.markmap;
+        autoLoader.transformPlugins = builtInPlugins.filter(plugin => plugin.name !== 'prism');
+      },
+  },
+};
 </script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"
+      crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"
+        crossorigin="anonymous">
+</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/mhchem.min.js"
+        crossorigin="anonymous">
+</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"
+       crossorigin="anonymous"
+       onload='renderMathInElement(document.body, null);'>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"
+        crossorigin="anonymous"></script>
+<script src="/js/main.min.fbdec66cacd6b5009065ebd01c03d530ecb2311819e6a66309e11888916a1e5d.js" integrity="sha256-&#43;97GbKzWtQCQZevQHAPVMOyyMRgZ5qZjCeEYiJFqHl0=" crossorigin="anonymous"></script>
+
 
     </body>
 </html>
