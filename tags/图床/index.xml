@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>默认 on zxsos</title>
-        <link>https://zxsos.github.io/tags/%E9%BB%98%E8%AE%A4/</link>
-        <description>Recent content in 默认 on zxsos</description>
+        <title>图床 on zxsos</title>
+        <link>https://zxsos.github.io/tags/%E5%9B%BE%E5%BA%8A/</link>
+        <description>Recent content in 图床 on zxsos</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>zxsos</copyright>
-        <lastBuildDate>Thu, 24 Apr 2025 20:21:04 +0800</lastBuildDate><atom:link href="https://zxsos.github.io/tags/%E9%BB%98%E8%AE%A4/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Test</title>
-        <link>https://zxsos.github.io/p/test/</link>
+        <lastBuildDate>Thu, 24 Apr 2025 20:21:04 +0800</lastBuildDate><atom:link href="https://zxsos.github.io/tags/%E5%9B%BE%E5%BA%8A/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Telegram图床搭建</title>
+        <link>https://zxsos.github.io/p/telegram%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/</link>
         <pubDate>Thu, 24 Apr 2025 20:21:04 +0800</pubDate>
         
-        <guid>https://zxsos.github.io/p/test/</guid>
-        <description>&lt;img src="https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp" alt="Featured image of post Test" /&gt;&lt;h2 id=&#34;前置条件&#34;&gt;前置条件：
+        <guid>https://zxsos.github.io/p/telegram%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/</guid>
+        <description>&lt;img src="https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp" alt="Featured image of post Telegram图床搭建" /&gt;&lt;h2 id=&#34;前置条件&#34;&gt;前置条件：
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Github 账号&lt;/li&gt;
 &lt;li&gt;CloudFlare 账号&lt;/li&gt;

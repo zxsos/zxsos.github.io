@@ -2,16 +2,16 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前置条件： Github 账号 CloudFlare 账号 Telegram 账号 Github 和 TG 都需要科学上网，注册好。\ngithub 设置： 进入 GitHub 项目主页：点击跳转，点击 fork\n不用设置，直接点击 create fork，到此 GitHub 的步骤就完毕可以不用管了。\n向 @BotFather 发送 /newbot，按照提示输入 bot 的备注、用户名等信息。成功创建后获得 TG_BOT_TOKEN。\n创建一个新的频道（Channel），进入新建的频道，选择频道管理，将刚才创建的机器人设为频道管理员。\n向 @VersaToolsBot 转发 一条第 2 步新建频道中的消息，获取 TG_CHAT_ID（频道 ID）\ncloudflare 设置： 打开 cloudflare，点击左边的 work&amp;page，接着点击 creat：\n选择刚刚 fork 的仓库\n点击 setup，下一个页面不需要设置，直接点击下一步直至部署完成。\n下面设置 kv：\nnamespacename 填写: img_url，点击 add：\n">
-<title>Test</title>
+<title>Telegram图床搭建</title>
 
-<link rel='canonical' href='https://zxsos.github.io/p/test/'>
+<link rel='canonical' href='https://zxsos.github.io/p/telegram%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/'>
 
-<link rel="stylesheet" href="/scss/style.min.47444e5c40c575008cedcf4d02f3f052315cf0a8d2a28c14492ba4a3dff2eff4.css"><meta property='og:title' content="Test">
+<link rel="stylesheet" href="/scss/style.min.47444e5c40c575008cedcf4d02f3f052315cf0a8d2a28c14492ba4a3dff2eff4.css"><meta property='og:title' content="Telegram图床搭建">
 <meta property='og:description' content="前置条件： Github 账号 CloudFlare 账号 Telegram 账号 Github 和 TG 都需要科学上网，注册好。\ngithub 设置： 进入 GitHub 项目主页：点击跳转，点击 fork\n不用设置，直接点击 create fork，到此 GitHub 的步骤就完毕可以不用管了。\n向 @BotFather 发送 /newbot，按照提示输入 bot 的备注、用户名等信息。成功创建后获得 TG_BOT_TOKEN。\n创建一个新的频道（Channel），进入新建的频道，选择频道管理，将刚才创建的机器人设为频道管理员。\n向 @VersaToolsBot 转发 一条第 2 步新建频道中的消息，获取 TG_CHAT_ID（频道 ID）\ncloudflare 设置： 打开 cloudflare，点击左边的 work&amp;page，接着点击 creat：\n选择刚刚 fork 的仓库\n点击 setup，下一个页面不需要设置，直接点击下一步直至部署完成。\n下面设置 kv：\nnamespacename 填写: img_url，点击 add：\n">
-<meta property='og:url' content='https://zxsos.github.io/p/test/'>
+<meta property='og:url' content='https://zxsos.github.io/p/telegram%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/'>
 <meta property='og:site_name' content='zxsos'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='默认' /><meta property='article:published_time' content='2025-04-24T20:21:04&#43;08:00'/><meta property='article:modified_time' content='2025-04-24T20:21:04&#43;08:00'/><meta property='og:image' content='https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp' />
-<meta name="twitter:title" content="Test">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='教程' /><meta property='article:tag' content='Telegram' /><meta property='article:tag' content='图床' /><meta property='article:published_time' content='2025-04-24T20:21:04&#43;08:00'/><meta property='article:modified_time' content='2025-04-24T20:21:04&#43;08:00'/><meta property='og:image' content='https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp' />
+<meta name="twitter:title" content="Telegram图床搭建">
 <meta name="twitter:description" content="前置条件： Github 账号 CloudFlare 账号 Telegram 账号 Github 和 TG 都需要科学上网，注册好。\ngithub 设置： 进入 GitHub 项目主页：点击跳转，点击 fork\n不用设置，直接点击 create fork，到此 GitHub 的步骤就完毕可以不用管了。\n向 @BotFather 发送 /newbot，按照提示输入 bot 的备注、用户名等信息。成功创建后获得 TG_BOT_TOKEN。\n创建一个新的频道（Channel），进入新建的频道，选择频道管理，将刚才创建的机器人设为频道管理员。\n向 @VersaToolsBot 转发 一条第 2 步新建频道中的消息，获取 TG_CHAT_ID（频道 ID）\ncloudflare 设置： 打开 cloudflare，点击左边的 work&amp;page，接着点击 creat：\n选择刚刚 fork 的仓库\n点击 setup，下一个页面不需要设置，直接点击下一步直至部署完成。\n下面设置 kv：\nnamespacename 填写: img_url，点击 add：\n"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp' />
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -263,9 +263,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/test/">
+            <a href="/p/telegram%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/">
                 
-                    <img src="https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp" loading="lazy" alt="Featured image of post Test" />
+                    <img src="https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp" loading="lazy" alt="Featured image of post Telegram图床搭建" />
                 
             </a>
         </div>
@@ -284,7 +284,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/test/">Test</a>
+            <a href="/p/telegram%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/">Telegram图床搭建</a>
         </h2>
     
         
@@ -547,7 +547,11 @@ TG_CHAT_ID = tg 返回的频道信息里的频道 id</p>
     
     <section class="article-tags">
         
-            <a href="/tags/%E9%BB%98%E8%AE%A4/">默认</a>
+            <a href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+        
+            <a href="/tags/telegram/">Telegram</a>
+        
+            <a href="/tags/%E5%9B%BE%E5%BA%8A/">图床</a>
         
     </section>
 
