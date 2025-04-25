@@ -13,7 +13,7 @@
         <pubDate>Thu, 24 Apr 2025 20:21:04 +0800</pubDate>
         
         <guid>https://zxsos.github.io/p/telegram%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/</guid>
-        <description>&lt;img src="https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp" alt="Featured image of post Telegram图床搭建" /&gt;&lt;h2 id=&#34;前置条件&#34;&gt;前置条件：
+        <description>&lt;img src="https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp" alt="Featured image of post Telegram图床搭建" /&gt;&lt;h2 id=&#34;前置条件&#34;&gt;前置条件
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Github 账号&lt;/li&gt;
 &lt;li&gt;CloudFlare 账号&lt;/li&gt;
@@ -122,7 +122,7 @@ markmap:
 	
 	
 &gt;&lt;/p&gt;
-&lt;h2 id=&#34;cloudflare-设置&#34;&gt;cloudflare 设置：
+&lt;h2 id=&#34;cloudflare-设置&#34;&gt;cloudflare 设置
 &lt;/h2&gt;&lt;h3 id=&#34;creat-page&#34;&gt;Creat Page
 &lt;/h3&gt;&lt;p&gt;打开 cloudflare，点击左边的 work&amp;amp;page，接着点击 creat：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/1745569093715_image-20250425161803692.png&#34;
@@ -142,7 +142,7 @@ markmap:
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;请输入图片描述&#34;
+		alt=&#34;fork&#34;
 	
 	
 &gt;&lt;/p&gt;
@@ -253,8 +253,8 @@ TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;&lt;/blockquote&gt
         <pubDate>Thu, 24 Apr 2025 16:24:53 +0800</pubDate>
         
         <guid>https://zxsos.github.io/p/git%E4%BF%AE%E6%94%B9/</guid>
-        <description>&lt;img src="https://lsky.bangbang.site/g/2025/04/24/680a5d9bacf59.webp" alt="Featured image of post Git修改" /&gt;&lt;h1 id=&#34;修改仓库所有者和修改-commit-信息&#34;&gt;修改仓库所有者和修改 commit 信息
-&lt;/h1&gt;&lt;p&gt;(&lt;font color=&#34;#9bbb59&#34;&gt; 不会更改时间线 &lt;/font&gt;)&lt;/p&gt;
+        <description>&lt;img src="https://lsky.bangbang.site/g/2025/04/24/680a5d9bacf59.webp" alt="Featured image of post Git修改" /&gt;&lt;h2 id=&#34;修改仓库所有者和修改-commit-信息&#34;&gt;修改仓库所有者和修改 commit 信息
+&lt;/h2&gt;&lt;p&gt;(&lt;font color=&#34;#9bbb59&#34;&gt; 不会更改时间线 &lt;/font&gt;)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -263,13 +263,10 @@ TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;&lt;/blockquote&gt
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git filter-branch -f --env-filter &lt;span class=&#34;s1&#34;&gt;&amp;#39; GIT_AUTHOR_NAME=&amp;#34;zxsos&amp;#34; GIT_AUTHOR_EMAIL=&amp;#34;my@domain&amp;#34; GIT_COMMITTER_NAME=&amp;#34;zxsos&amp;#34; GIT_COMMITTER_EMAIL=&amp;#34;my@domain &amp;#39;&lt;/span&gt; --tag-name-filter cat -- --branches --tags
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;[!] 可能提示不安全被废弃&lt;/p&gt;
-&lt;h1 id=&#34;更好的解决方案bushi&#34;&gt;更好的解决方案（bushi）
-&lt;/h1&gt;&lt;p&gt;虽然可以继续用 filter-branch，但我强烈建议改用更安全的 &lt;code&gt;git filter-repo&lt;/code&gt;：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;先安装（如果尚未安装）：&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;/div&gt;&lt;p&gt;!可能提示不安全被废弃&lt;/p&gt;
+&lt;h2 id=&#34;更好的解决方案bushi&#34;&gt;更好的解决方案（bushi）
+&lt;/h2&gt;&lt;p&gt;虽然可以继续用 filter-branch，但我强烈建议改用更安全的 &lt;code&gt;git filter-repo&lt;/code&gt;：&lt;/p&gt;
+&lt;p&gt;先安装（如果尚未安装）：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -278,10 +275,7 @@ TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;&lt;/blockquote&gt
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install git-filter-repo
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;blockquote&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;执行更安全的修改：&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;/div&gt;&lt;p&gt;执行更安全的修改：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -298,8 +292,8 @@ TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;&lt;/blockquote&gt
         <pubDate>Thu, 24 Apr 2025 15:55:12 +0800</pubDate>
         
         <guid>https://zxsos.github.io/p/%E6%90%AD%E5%BB%BAgitea/</guid>
-        <description>&lt;img src="https://lsky.bangbang.site/g/2025/04/24/680a5d62793f4.webp" alt="Featured image of post 搭建Gitea" /&gt;&lt;h1 id=&#34;1panel--gitea--docker--cloudflare--反代-教程&#34;&gt;&lt;strong&gt;1panel + gitea + docker + cloudflare + 反代 教程&lt;/strong&gt;
-&lt;/h1&gt;&lt;h2 id=&#34;准备&#34;&gt;准备
+        <description>&lt;img src="https://lsky.bangbang.site/g/2025/04/24/680a5d62793f4.webp" alt="Featured image of post 搭建Gitea" /&gt;&lt;h2 id=&#34;1panel--gitea--docker--cloudflare--反代-教程&#34;&gt;1panel + gitea + docker + cloudflare + 反代 教程
+&lt;/h2&gt;&lt;h2 id=&#34;准备&#34;&gt;准备
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -457,7 +451,7 @@ markmap:
 &lt;li&gt;&lt;strong&gt;SSH 端口建议&lt;/strong&gt;： 推荐使用默认端口 &lt;code&gt;22&lt;/code&gt;，若选择其他端口（如 &lt;code&gt;222&lt;/code&gt; ），后续 Git 操作需使用格式： &lt;code&gt;git@XX:222&lt;/code&gt;  若可接受此格式可跳过修改 SSH 部分&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;修改-ssh-配置文件&#34;&gt;&lt;strong&gt;修改 SSH 配置文件&lt;/strong&gt;
-&lt;/h4&gt;&lt;h5 id=&#34;使用编辑器打开配置文件&#34;&gt;使用编辑器打开配置文件：
+&lt;/h4&gt;&lt;h5 id=&#34;使用编辑器打开配置文件&#34;&gt;使用编辑器打开配置文件
 &lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1

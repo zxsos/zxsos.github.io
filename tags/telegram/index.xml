@@ -13,7 +13,7 @@
         <pubDate>Thu, 24 Apr 2025 20:21:04 +0800</pubDate>
         
         <guid>https://zxsos.github.io/p/telegram%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/</guid>
-        <description>&lt;img src="https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp" alt="Featured image of post Telegram图床搭建" /&gt;&lt;h2 id=&#34;前置条件&#34;&gt;前置条件：
+        <description>&lt;img src="https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp" alt="Featured image of post Telegram图床搭建" /&gt;&lt;h2 id=&#34;前置条件&#34;&gt;前置条件
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Github 账号&lt;/li&gt;
 &lt;li&gt;CloudFlare 账号&lt;/li&gt;
@@ -122,7 +122,7 @@ markmap:
 	
 	
 &gt;&lt;/p&gt;
-&lt;h2 id=&#34;cloudflare-设置&#34;&gt;cloudflare 设置：
+&lt;h2 id=&#34;cloudflare-设置&#34;&gt;cloudflare 设置
 &lt;/h2&gt;&lt;h3 id=&#34;creat-page&#34;&gt;Creat Page
 &lt;/h3&gt;&lt;p&gt;打开 cloudflare，点击左边的 work&amp;amp;page，接着点击 creat：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/1745569093715_image-20250425161803692.png&#34;
@@ -142,7 +142,7 @@ markmap:
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;请输入图片描述&#34;
+		alt=&#34;fork&#34;
 	
 	
 &gt;&lt;/p&gt;
