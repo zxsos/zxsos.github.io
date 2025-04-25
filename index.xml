@@ -161,7 +161,7 @@
 &gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;gitea-安装与-ssh-配置&#34;&gt;&lt;strong&gt;Gitea 安装与 SSH 配置&lt;/strong&gt;
-&lt;/h3&gt;&lt;h4 id=&#34;-安装-gitea&#34;&gt;** 安装 Gitea**
+&lt;/h3&gt;&lt;h4 id=&#34;安装-gitea&#34;&gt;&lt;strong&gt;安装 Gitea&lt;/strong&gt;
 &lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802963007595.png&#34;
 	
 	
@@ -184,7 +184,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;SSH 端口建议&lt;/strong&gt;： 推荐使用默认端口 &lt;code&gt;22&lt;/code&gt;，若选择其他端口（如 &lt;code&gt;222&lt;/code&gt; ），后续 Git 操作需使用格式： &lt;code&gt;git@XX:222&lt;/code&gt;  若可接受此格式可跳过修改 SSH 部分&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;-修改-ssh-配置文件&#34;&gt;** 修改 SSH 配置文件**
+&lt;h4 id=&#34;修改-ssh-配置文件&#34;&gt;&lt;strong&gt;修改 SSH 配置文件&lt;/strong&gt;
 &lt;/h4&gt;&lt;h5 id=&#34;使用编辑器打开配置文件&#34;&gt;使用编辑器打开配置文件：
 &lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -210,8 +210,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5 id=&#34;重启-ssh-服务&#34;&gt;重启 SSH 服务
-&lt;/h5&gt;&lt;p&gt; &lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
@@ -368,6 +367,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;如果出现以下返回就没问题了
 &lt;code&gt;Hi there, XXXX! You&#39;ve successfully authenticated with the key named Gitea, but Gitea does not provide shell access.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;本文原载于bangbang.com，复制请保留原文出处。&lt;/p&gt;
 </description>
         </item>
         <item>
