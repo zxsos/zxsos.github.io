@@ -13,7 +13,7 @@
         <pubDate>Sat, 26 Apr 2025 15:57:04 +0800</pubDate>
         
         <guid>https://zxsos.github.io/p/tg-bot-%E5%AE%9E%E7%8E%B0%E8%BD%AC%E5%8F%91%E4%B8%8A%E4%BC%A0/</guid>
-        <description>&lt;img src="https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp" alt="Featured image of post Tg-bot" /&gt;&lt;p&gt;项目地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/zxsos/tg-image-bot&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;img src="https://zxsos.pages.dev/file/setu/1745741264535_image.jpg" alt="Featured image of post Tg-bot" /&gt;&lt;p&gt;项目地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/zxsos/tg-image-bot&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;tg-bot&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;这是一个部署在 Cloudflare Workers 上的 Telegram 机器人。它可以接收您发送到 Telegram 的图片和视频文件，并将它们自动上传到您指定的图床或对象存储服务（需要有公开的上传接口），然后将生成的公开链接返回给您。&lt;/p&gt;
 &lt;p&gt;本项目利用 Cloudflare Workers 的 Serverless 特性，可以实现低成本甚至免费（在 Cloudflare 免费额度内）运行。&lt;/p&gt;
