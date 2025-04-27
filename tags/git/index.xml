@@ -9,11 +9,11 @@
         <copyright>zxsos</copyright>
         <lastBuildDate>Thu, 24 Apr 2025 15:55:12 +0800</lastBuildDate><atom:link href="https://zxsos.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>搭建Gitea</title>
-        <link>https://zxsos.github.io/p/%E6%90%AD%E5%BB%BAgitea/</link>
+        <link>https://zxsos.github.io/p/set-up-gitea/</link>
         <pubDate>Thu, 24 Apr 2025 15:55:12 +0800</pubDate>
         
-        <guid>https://zxsos.github.io/p/%E6%90%AD%E5%BB%BAgitea/</guid>
-        <description>&lt;img src="https://lsky.bangbang.site/g/2025/04/24/680a5d62793f4.webp" alt="Featured image of post 搭建Gitea" /&gt;&lt;h2 id=&#34;1panel--gitea--docker--cloudflare--反代-教程&#34;&gt;1panel + gitea + docker + cloudflare + 反代 教程
+        <guid>https://zxsos.github.io/p/set-up-gitea/</guid>
+        <description>&lt;img src="https://zxsos.pages.dev/file/pic/1745777619131_20250428021330748.png" alt="Featured image of post 搭建Gitea" /&gt;&lt;h2 id=&#34;1panel--gitea--docker--cloudflare--反代-教程&#34;&gt;1panel + gitea + docker + cloudflare + 反代 教程
 &lt;/h2&gt;&lt;h2 id=&#34;准备&#34;&gt;准备
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;ul&gt;

@@ -8,12 +8,46 @@
         <language>zh-cn</language>
         <copyright>zxsos</copyright>
         <lastBuildDate>Sat, 26 Apr 2025 15:57:04 +0800</lastBuildDate><atom:link href="https://zxsos.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>默认</title>
-        <link>https://zxsos.github.io/categories/%E9%BB%98%E8%AE%A4/</link>
+        <title>自搭建教程</title>
+        <link>https://zxsos.github.io/categories/%E8%87%AA%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</link>
         <pubDate>Sat, 26 Apr 2025 15:57:04 +0800</pubDate>
         
+        <guid>https://zxsos.github.io/categories/%E8%87%AA%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</guid>
+        <description>&lt;img src="https://zxsos.pages.dev/file/pic/1745782280479_20250428033116889.gif" alt="Featured image of post 自搭建教程" /&gt;</description>
+        </item>
+        <item>
+        <title>Git</title>
+        <link>https://zxsos.github.io/categories/git/</link>
+        <pubDate>Thu, 24 Apr 2025 16:24:53 +0800</pubDate>
+        
+        <guid>https://zxsos.github.io/categories/git/</guid>
+        <description>&lt;img src="https://zxsos.pages.dev/file/pic/1745778090506_20250428022125434.png" alt="Featured image of post Git" /&gt;</description>
+        </item>
+        <item>
+        <title>Docker</title>
+        <link>https://zxsos.github.io/categories/docker/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://zxsos.github.io/categories/docker/</guid>
+        <description>&lt;img src="https://zxsos.pages.dev/file/pic/1745781270069_20250428031418866.png" alt="Featured image of post Docker" /&gt;</description>
+        </item>
+        <item>
+        <title>默认</title>
+        <link>https://zxsos.github.io/categories/%E9%BB%98%E8%AE%A4/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
         <guid>https://zxsos.github.io/categories/%E9%BB%98%E8%AE%A4/</guid>
-        <description>&lt;img src="https://lsky.bangbang.site/g/2025/04/24/680a5e2c1be1a.webp" alt="Featured image of post 默认" /&gt;</description>
+        <description>&lt;img src="https://zxsos.pages.dev/file/pic/1745782032712_20250428032702014.png" alt="Featured image of post 默认" /&gt;&lt;h2 id=&#34;默认分类&#34;&gt;默认分类
+&lt;/h2&gt;&lt;p&gt;啥都可以往这里扔&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>运维</title>
+        <link>https://zxsos.github.io/categories/%E8%BF%90%E7%BB%B4/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://zxsos.github.io/categories/%E8%BF%90%E7%BB%B4/</guid>
+        <description>&lt;img src="https://zxsos.pages.dev/file/pic/1745782136942_20250428032846514.png" alt="Featured image of post 运维" /&gt;</description>
         </item>
         
     </channel>
