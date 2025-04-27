@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="修改仓库所有者和修改 commit 信息 ( 不会更改时间线 )\n1 git filter-branch -f --env-filter &#39; GIT_AUTHOR_NAME=&#34;zxsos&#34; GIT_AUTHOR_EMAIL=&#34;my@domain&#34; GIT_COMMITTER_NAME=&#34;zxsos&#34; GIT_COMMITTER_EMAIL=&#34;my@domain &#39; --tag-name-filter cat -- --branches --tags ! 可能提示不安全被废弃\n更好的解决方案（bushi） 虽然可以继续用 filter-branch，但我强烈建议改用更安全的 git filter-repo：\n先安装（如果尚未安装）：\n1 pip install git-filter-repo 执行更安全的修改：\n1 git filter-repo --name-callback &#34;return b&#39;xxxx&#39;&#34; --email-callback &#34;return b&#39;xxx@email.com&#39;&#34; --force ">
-<title>Git修改</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="项目地址 tg-bot\n这是一个部署在 Cloudflare Workers 上的 Telegram 机器人。它可以接收您发送到 Telegram 的图片和视频文件，并将它们自动上传到您指定的图床或对象存储服务（需要有公开的上传接口），然后将生成的公开链接返回给您。\n本项目利用 Cloudflare Workers 的 Serverless 特性，可以实现低成本甚至免费（在 Cloudflare 免费额度内）运行。\n✨ 功能特性 自动上传: 直接向机器人发送图片或视频即可触发上传。 支持图片和视频: 可以处理常见的图片格式和视频格式（作为视频文件或文档发送）。 配置灵活: 通过 Cloudflare 环境变量和 Secrets 配置图床地址、Bot Token 和可选的认证信息，无需修改代码。 部署简单: 基于 Cloudflare Workers，部署流程相对简单。 低成本: 利用 Cloudflare 的免费套餐额度。 安全: 敏感信息（如 Bot Token、认证代码）通过 Secrets 管理，更加安全。 🚀 工作原理 用户在 Telegram 中向此机器人发送图片或视频。 Telegram 将包含文件信息的更新（Update）通过 Webhook 发送到 Cloudflare Worker 的 URL。 Cloudflare Worker 脚本被触发，解析收到的更新。 Worker 使用 Telegram Bot API 下载用户发送的文件。 Worker 将下载的文件上传到在环境变量 IMG_BED_URL 中配置的图床地址，（如果配置了 AUTH_CODE）会携带相应的认证参数。 Worker 解析图床返回的响应，提取公开的文件链接。 Worker 使用 Telegram Bot API 将获取到的文件链接发送回给用户。 🔧 环境要求 一个 Telegram Bot: 需要通过 BotFather 创建，并获取其 Bot Token。 一个图床/对象存储服务: 需要提供一个公开的 文件上传接口 URL (IMG_BED_URL)。 如果该接口需要认证，需要获取相应的 认证代码 (AUTH_CODE)。常见的简单图床可能通过 URL 参数或 Header 进行认证，本项目代码目前实现了通过 URL 参数 (authCode) 传递认证信息。 一个 Cloudflare 账户: 免费账户即可开始。 🛠️ 部署与配置步骤 创建 Telegram Bot:\n">
+<title>Tg-bot</title>
 
-<link rel='canonical' href='https://zxsos.github.io/p/git%E4%BF%AE%E6%94%B9/'>
+<link rel='canonical' href='https://zxsos.github.io/p/tg-bot-%E5%AE%9E%E7%8E%B0%E8%BD%AC%E5%8F%91%E4%B8%8A%E4%BC%A0/'>
 
-<link rel="stylesheet" href="/scss/style.min.e0dc6fb4c366ccf03da20bbf3c812049c11dc08d58478b6fa14e0bf797648b3f.css"><meta property='og:title' content="Git修改">
-<meta property='og:description' content="修改仓库所有者和修改 commit 信息 ( 不会更改时间线 )\n1 git filter-branch -f --env-filter &#39; GIT_AUTHOR_NAME=&#34;zxsos&#34; GIT_AUTHOR_EMAIL=&#34;my@domain&#34; GIT_COMMITTER_NAME=&#34;zxsos&#34; GIT_COMMITTER_EMAIL=&#34;my@domain &#39; --tag-name-filter cat -- --branches --tags ! 可能提示不安全被废弃\n更好的解决方案（bushi） 虽然可以继续用 filter-branch，但我强烈建议改用更安全的 git filter-repo：\n先安装（如果尚未安装）：\n1 pip install git-filter-repo 执行更安全的修改：\n1 git filter-repo --name-callback &#34;return b&#39;xxxx&#39;&#34; --email-callback &#34;return b&#39;xxx@email.com&#39;&#34; --force ">
-<meta property='og:url' content='https://zxsos.github.io/p/git%E4%BF%AE%E6%94%B9/'>
+<link rel="stylesheet" href="/scss/style.min.e0dc6fb4c366ccf03da20bbf3c812049c11dc08d58478b6fa14e0bf797648b3f.css"><meta property='og:title' content="Tg-bot">
+<meta property='og:description' content="项目地址 tg-bot\n这是一个部署在 Cloudflare Workers 上的 Telegram 机器人。它可以接收您发送到 Telegram 的图片和视频文件，并将它们自动上传到您指定的图床或对象存储服务（需要有公开的上传接口），然后将生成的公开链接返回给您。\n本项目利用 Cloudflare Workers 的 Serverless 特性，可以实现低成本甚至免费（在 Cloudflare 免费额度内）运行。\n✨ 功能特性 自动上传: 直接向机器人发送图片或视频即可触发上传。 支持图片和视频: 可以处理常见的图片格式和视频格式（作为视频文件或文档发送）。 配置灵活: 通过 Cloudflare 环境变量和 Secrets 配置图床地址、Bot Token 和可选的认证信息，无需修改代码。 部署简单: 基于 Cloudflare Workers，部署流程相对简单。 低成本: 利用 Cloudflare 的免费套餐额度。 安全: 敏感信息（如 Bot Token、认证代码）通过 Secrets 管理，更加安全。 🚀 工作原理 用户在 Telegram 中向此机器人发送图片或视频。 Telegram 将包含文件信息的更新（Update）通过 Webhook 发送到 Cloudflare Worker 的 URL。 Cloudflare Worker 脚本被触发，解析收到的更新。 Worker 使用 Telegram Bot API 下载用户发送的文件。 Worker 将下载的文件上传到在环境变量 IMG_BED_URL 中配置的图床地址，（如果配置了 AUTH_CODE）会携带相应的认证参数。 Worker 解析图床返回的响应，提取公开的文件链接。 Worker 使用 Telegram Bot API 将获取到的文件链接发送回给用户。 🔧 环境要求 一个 Telegram Bot: 需要通过 BotFather 创建，并获取其 Bot Token。 一个图床/对象存储服务: 需要提供一个公开的 文件上传接口 URL (IMG_BED_URL)。 如果该接口需要认证，需要获取相应的 认证代码 (AUTH_CODE)。常见的简单图床可能通过 URL 参数或 Header 进行认证，本项目代码目前实现了通过 URL 参数 (authCode) 传递认证信息。 一个 Cloudflare 账户: 免费账户即可开始。 🛠️ 部署与配置步骤 创建 Telegram Bot:\n">
+<meta property='og:url' content='https://zxsos.github.io/p/tg-bot-%E5%AE%9E%E7%8E%B0%E8%BD%AC%E5%8F%91%E4%B8%8A%E4%BC%A0/'>
 <meta property='og:site_name' content='zxsos'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='教程' /><meta property='article:published_time' content='2025-04-24T16:24:53&#43;08:00'/><meta property='article:modified_time' content='2025-04-24T16:24:53&#43;08:00'/><meta property='og:image' content='https://lsky.bangbang.site/g/2025/04/24/680a5d9bacf59.webp' />
-<meta name="twitter:title" content="Git修改">
-<meta name="twitter:description" content="修改仓库所有者和修改 commit 信息 ( 不会更改时间线 )\n1 git filter-branch -f --env-filter &#39; GIT_AUTHOR_NAME=&#34;zxsos&#34; GIT_AUTHOR_EMAIL=&#34;my@domain&#34; GIT_COMMITTER_NAME=&#34;zxsos&#34; GIT_COMMITTER_EMAIL=&#34;my@domain &#39; --tag-name-filter cat -- --branches --tags ! 可能提示不安全被废弃\n更好的解决方案（bushi） 虽然可以继续用 filter-branch，但我强烈建议改用更安全的 git filter-repo：\n先安装（如果尚未安装）：\n1 pip install git-filter-repo 执行更安全的修改：\n1 git filter-repo --name-callback &#34;return b&#39;xxxx&#39;&#34; --email-callback &#34;return b&#39;xxx@email.com&#39;&#34; --force "><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://lsky.bangbang.site/g/2025/04/24/680a5d9bacf59.webp' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='教程' /><meta property='article:tag' content='Telegram' /><meta property='article:tag' content='图床' /><meta property='article:published_time' content='2025-04-26T15:57:04&#43;08:00'/><meta property='article:modified_time' content='2025-04-26T15:57:04&#43;08:00'/><meta property='og:image' content='https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp' />
+<meta name="twitter:title" content="Tg-bot">
+<meta name="twitter:description" content="项目地址 tg-bot\n这是一个部署在 Cloudflare Workers 上的 Telegram 机器人。它可以接收您发送到 Telegram 的图片和视频文件，并将它们自动上传到您指定的图床或对象存储服务（需要有公开的上传接口），然后将生成的公开链接返回给您。\n本项目利用 Cloudflare Workers 的 Serverless 特性，可以实现低成本甚至免费（在 Cloudflare 免费额度内）运行。\n✨ 功能特性 自动上传: 直接向机器人发送图片或视频即可触发上传。 支持图片和视频: 可以处理常见的图片格式和视频格式（作为视频文件或文档发送）。 配置灵活: 通过 Cloudflare 环境变量和 Secrets 配置图床地址、Bot Token 和可选的认证信息，无需修改代码。 部署简单: 基于 Cloudflare Workers，部署流程相对简单。 低成本: 利用 Cloudflare 的免费套餐额度。 安全: 敏感信息（如 Bot Token、认证代码）通过 Secrets 管理，更加安全。 🚀 工作原理 用户在 Telegram 中向此机器人发送图片或视频。 Telegram 将包含文件信息的更新（Update）通过 Webhook 发送到 Cloudflare Worker 的 URL。 Cloudflare Worker 脚本被触发，解析收到的更新。 Worker 使用 Telegram Bot API 下载用户发送的文件。 Worker 将下载的文件上传到在环境变量 IMG_BED_URL 中配置的图床地址，（如果配置了 AUTH_CODE）会携带相应的认证参数。 Worker 解析图床返回的响应，提取公开的文件链接。 Worker 使用 Telegram Bot API 将获取到的文件链接发送回给用户。 🔧 环境要求 一个 Telegram Bot: 需要通过 BotFather 创建，并获取其 Bot Token。 一个图床/对象存储服务: 需要提供一个公开的 文件上传接口 URL (IMG_BED_URL)。 如果该接口需要认证，需要获取相应的 认证代码 (AUTH_CODE)。常见的简单图床可能通过 URL 参数或 Header 进行认证，本项目代码目前实现了通过 URL 参数 (authCode) 传递认证信息。 一个 Cloudflare 账户: 免费账户即可开始。 🛠️ 部署与配置步骤 创建 Telegram Bot:\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp' />
     <link rel="shortcut icon" href="/favicon.ico" />
 <script
   src="https://code.jquery.com/jquery-latest.min.js"
@@ -252,8 +252,12 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#修改仓库所有者和修改-commit-信息">修改仓库所有者和修改 commit 信息</a></li>
-    <li><a href="#更好的解决方案bushi">更好的解决方案（bushi）</a></li>
+    <li><a href="#-功能特性">✨ 功能特性</a></li>
+    <li><a href="#-工作原理">🚀 工作原理</a></li>
+    <li><a href="#-环境要求">🔧 环境要求</a></li>
+    <li><a href="#-部署与配置步骤">🛠️ 部署与配置步骤</a></li>
+    <li><a href="#-如何使用">💬 如何使用</a></li>
+    <li><a href="#设置机器人命令菜单-可选">设置机器人命令菜单 (可选)</a></li>
   </ol>
 </nav>
         </div>
@@ -268,9 +272,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/git%E4%BF%AE%E6%94%B9/">
+            <a href="/p/tg-bot-%E5%AE%9E%E7%8E%B0%E8%BD%AC%E5%8F%91%E4%B8%8A%E4%BC%A0/">
                 
-                    <img src="https://lsky.bangbang.site/g/2025/04/24/680a5d9bacf59.webp" loading="lazy" alt="Featured image of post Git修改" />
+                    <img src="https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp" loading="lazy" alt="Featured image of post Tg-bot" />
                 
             </a>
         </div>
@@ -289,7 +293,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/git%E4%BF%AE%E6%94%B9/">Git修改</a>
+            <a href="/p/tg-bot-%E5%AE%9E%E7%8E%B0%E8%BD%AC%E5%8F%91%E4%B8%8A%E4%BC%A0/">Tg-bot</a>
         </h2>
     
         
@@ -311,7 +315,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Apr 24, 2025</time>
+                <time class="article-time--published">Apr 26, 2025</time>
             </div>
         
 
@@ -326,7 +330,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -341,38 +345,171 @@
     <section class="article-content">
     
     
-    <h2 id="修改仓库所有者和修改-commit-信息">修改仓库所有者和修改 commit 信息
-</h2><p>(<font color="#9bbb59"> 不会更改时间线 </font>)</p>
+    <p>项目地址 <a class="link" href="https://github.com/zxsos/tg-image-bot"  target="_blank" rel="noopener"
+    >tg-bot</a></p>
+<p>这是一个部署在 Cloudflare Workers 上的 Telegram 机器人。它可以接收您发送到 Telegram 的图片和视频文件，并将它们自动上传到您指定的图床或对象存储服务（需要有公开的上传接口），然后将生成的公开链接返回给您。</p>
+<p>本项目利用 Cloudflare Workers 的 Serverless 特性，可以实现低成本甚至免费（在 Cloudflare 免费额度内）运行。</p>
+<h2 id="-功能特性">✨ 功能特性
+</h2><ul>
+<li><strong>自动上传</strong>: 直接向机器人发送图片或视频即可触发上传。</li>
+<li><strong>支持图片和视频</strong>: 可以处理常见的图片格式和视频格式（作为视频文件或文档发送）。</li>
+<li><strong>配置灵活</strong>: 通过 Cloudflare 环境变量和 Secrets 配置图床地址、Bot Token 和可选的认证信息，无需修改代码。</li>
+<li><strong>部署简单</strong>: 基于 Cloudflare Workers，部署流程相对简单。</li>
+<li><strong>低成本</strong>: 利用 Cloudflare 的免费套餐额度。</li>
+<li><strong>安全</strong>: 敏感信息（如 Bot Token、认证代码）通过 Secrets 管理，更加安全。</li>
+</ul>
+<h2 id="-工作原理">🚀 工作原理
+</h2><ol>
+<li>用户在 Telegram 中向此机器人发送图片或视频。</li>
+<li>Telegram 将包含文件信息的更新（Update）通过 Webhook 发送到 Cloudflare Worker 的 URL。</li>
+<li>Cloudflare Worker 脚本被触发，解析收到的更新。</li>
+<li>Worker 使用 Telegram Bot API 下载用户发送的文件。</li>
+<li>Worker 将下载的文件上传到在环境变量 <code>IMG_BED_URL</code> 中配置的图床地址，（如果配置了 <code>AUTH_CODE</code>）会携带相应的认证参数。</li>
+<li>Worker 解析图床返回的响应，提取公开的文件链接。</li>
+<li>Worker 使用 Telegram Bot API 将获取到的文件链接发送回给用户。</li>
+</ol>
+<h2 id="-环境要求">🔧 环境要求
+</h2><ul>
+<li><strong>一个 Telegram Bot</strong>: 需要通过 <a class="link" href="https://t.me/BotFather"  target="_blank" rel="noopener"
+    >BotFather</a> 创建，并获取其 <strong>Bot Token</strong>。</li>
+<li><strong>一个图床/对象存储服务</strong>:
+<ul>
+<li>需要提供一个公开的 <strong>文件上传接口 URL</strong> (<code>IMG_BED_URL</code>)。</li>
+<li>如果该接口需要认证，需要获取相应的 <strong>认证代码</strong> (<code>AUTH_CODE</code>)。常见的简单图床可能通过 URL 参数或 Header 进行认证，本项目代码目前实现了通过 URL 参数 (<code>authCode</code>) 传递认证信息。</li>
+</ul>
+</li>
+<li><strong>一个 Cloudflare 账户</strong>: 免费账户即可开始。</li>
+</ul>
+<h2 id="-部署与配置步骤">🛠️ 部署与配置步骤
+</h2><ol>
+<li>
+<p><strong>创建 Telegram Bot</strong>:</p>
+<ul>
+<li>在 Telegram 中与 <a class="link" href="https://t.me/BotFather"  target="_blank" rel="noopener"
+    >@BotFather</a> 对话。</li>
+<li>发送 <code>/newbot</code> 命令，按照提示设置机器人的名称和用户名。</li>
+<li><strong>记下 BotFather 返回的 <code>HTTP API token</code></strong>，这就是您的 <code>BOT_TOKEN</code>。</li>
+</ul>
+</li>
+<li>
+<p><strong>准备图床信息</strong>:</p>
+<ul>
+<li>确定您的图床或对象存储服务的 <strong>上传接口 URL</strong> (例如 <code>https://your.domain/upload</code>)。这将是 <code>IMG_BED_URL</code> 的值。</li>
+<li>如果上传需要认证码，<strong>获取该认证码</strong>。这将是 <code>AUTH_CODE</code> 的值。如果不需要认证，则此项为空。</li>
+</ul>
+</li>
+<li>
+<p><strong>Fork 本项目</strong>:</p>
+<ul>
+<li>Fork 本仓库。</li>
+</ul>
+</li>
+<li>
+<p><strong>部署 CloudFlare Worker</strong>:</p>
+<ul>
+<li>
+<p><em>方法</em>： 登录 Cloudflare -&gt; Workers &amp; Pages -&gt; 创建 -&gt; 导入存储库选择刚刚 fork 的仓库 -&gt; 填入部署命令 <code>npx wrangler deploy</code> -&gt; 保存并部署</p>
+</li>
+<li>
+<p>部署成功后，Wrangler 会输出您的 Worker 的访问 URL，例如 <code>https://your-worker-name.your-subdomain.workers.dev</code>。<strong>记下这个 URL</strong>。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>配置环境变量 (关键步骤)</strong>:
+您可以通过 Cloudflare Worker 仪表板设置。<strong>推荐使用密钥存储敏感信息</strong>。</p>
+<ul>
+<li>
+<p><strong>设置 <code>BOT_TOKEN</code></strong>:</p>
+<ul>
+<li><em>网页方法</em>: 登录 Cloudflare -&gt; Workers &amp; Pages -&gt; 您的 Worker -&gt; Settings -&gt; Variables -&gt; Add variable -&gt; 输入 <code>BOT_TOKEN</code> -&gt; 粘贴 Token -&gt; <strong>点击 &ldquo;Encrypt&rdquo;</strong> -&gt; Save。</li>
+</ul>
+</li>
+<li>
+<p><strong>设置 <code>AUTH_CODE</code>(选填)</strong>:</p>
+<ul>
+<li><em>网页方法</em>: 类似 BOT_TOKEN，添加名为 <code>AUTH_CODE</code> 的变量，粘贴认证码，<strong>点击 &ldquo;Encrypt&rdquo;</strong> -&gt; Save。</li>
+</ul>
+</li>
+<li>
+<p><strong>设置 <code>IMG_BED_URL</code></strong>:</p>
+<ul>
+<li><em>网页方法</em>: 登录 Cloudflare -&gt; Workers &amp; Pages -&gt; 您的 Worker -&gt; Settings -&gt; Variables -&gt; Add variable -&gt; 输入 <code>IMG_BED_URL</code> -&gt; 粘贴图床上传 URL -&gt; Save。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>设置 Telegram Webhook</strong>:</p>
+<ul>
+<li>
+<p>需要告诉 Telegram 将机器人的更新发送到您刚刚部署的 Worker URL。</p>
+</li>
+<li>
+<p>打开浏览器，或者使用 <code>curl</code> 工具，访问以下链接（<strong>请务必替换 <code>&lt;YOUR_BOT_TOKEN&gt;</code> 和 <code>&lt;YOUR_WORKER_URL&gt;</code></strong>）：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git filter-branch -f --env-filter <span class="s1">&#39; GIT_AUTHOR_NAME=&#34;zxsos&#34; GIT_AUTHOR_EMAIL=&#34;my@domain&#34; GIT_COMMITTER_NAME=&#34;zxsos&#34; GIT_COMMITTER_EMAIL=&#34;my@domain &#39;</span> --tag-name-filter cat -- --branches --tags
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://api.telegram.org/botID/setWebhook?url=domain
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>! 可能提示不安全被废弃</p>
-<h2 id="更好的解决方案bushi">更好的解决方案（bushi）
-</h2><p>虽然可以继续用 filter-branch，但我强烈建议改用更安全的 <code>git filter-repo</code>：</p>
-<p>先安装（如果尚未安装）：</p>
+</div><p>例如:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install git-filter-repo
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api</span><span class="o">.</span><span class="n">telegram</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">bot123456</span><span class="p">:</span><span class="n">ABC</span><span class="o">-</span><span class="n">DEF1234</span><span class="o">/</span><span class="n">setWebhook</span><span class="err">?</span><span class="n">url</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">my</span><span class="o">-</span><span class="n">tg</span><span class="o">-</span><span class="n">uploader</span><span class="o">.</span><span class="n">myusername</span><span class="o">.</span><span class="n">workers</span><span class="o">.</span><span class="n">dev</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>执行更安全的修改：</p>
+</div></li>
+<li>
+<p>如果浏览器显示 <code>{&quot;ok&quot;:true,&quot;result&quot;:true,&quot;description&quot;:&quot;Webhook was set&quot;}</code> 或类似信息，则表示设置成功。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="-如何使用">💬 如何使用
+</h2><ol>
+<li>在 Telegram 中搜索您创建的机器人的用户名，并开始对话。</li>
+<li>发送 <code>/start</code> 命令给机器人（通常只需要第一次）。</li>
+<li>发送 <code>/help</code> 命令可以查看简单的使用说明。</li>
+<li>直接发送一张 <strong>图片</strong> 或一个 <strong>视频文件</strong> 给机器人。</li>
+<li>等待片刻，机器人会将上传后的公开链接回复给您。</li>
+</ol>
+<h2 id="设置机器人命令菜单-可选">设置机器人命令菜单 (可选)
+</h2><p>为了让用户在 Telegram 中更方便地使用 <code>/start</code> 和 <code>/help</code> 命令（例如通过点击输入框旁边的 <code>/</code> 按钮），您可以通过 BotFather 设置命令列表。这能提供命令提示，改善用户体验。</p>
+<ol>
+<li>
+<p>在 Telegram 中再次与 <a class="link" href="https://t.me/BotFather"  target="_blank" rel="noopener"
+    >@BotFather</a> 对话。</p>
+</li>
+<li>
+<p>发送 <code>/setcommands</code> 命令。</p>
+</li>
+<li>
+<p>按照提示，选择您刚刚部署配置好的机器人。</p>
+</li>
+<li>
+<p><strong>直接发送以下文本</strong>（确保命令和描述之间有空格和连字符，并且每个命令占一行，可以进行修改）：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git filter-repo --name-callback <span class="s2">&#34;return b&#39;xxxx&#39;&#34;</span> --email-callback <span class="s2">&#34;return b&#39;xxx@email.com&#39;&#34;</span> --force
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">start - 启用机器人
+</span></span><span class="line"><span class="cl">help - 查看帮助信息
 </span></span></code></pre></td></tr></table>
 </div>
-</div>
+</div></li>
+<li>
+<p>设置成功后，用户在与您的机器人对话时，点击 <code>/</code> 按钮就能看到这些预设的命令选项了。</p>
+</li>
+</ol>
+
 </section>
 
 
@@ -381,6 +518,10 @@
     <section class="article-tags">
         
             <a href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+        
+            <a href="/tags/telegram/">Telegram</a>
+        
+            <a href="/tags/%E5%9B%BE%E5%BA%8A/">图床</a>
         
     </section>
 
@@ -428,25 +569,6 @@
             
                 
 <article class="has-image">
-    <a href="/p/tg-bot-%E5%AE%9E%E7%8E%B0%E8%BD%AC%E5%8F%91%E4%B8%8A%E4%BC%A0/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp" loading="lazy" data-key="Tg-bot 实现转发上传" data-hash="https://lsky.bangbang.site/g/2025/04/24/680a5e72d3a00.webp"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Tg-bot</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
     <a href="/p/telegram%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/">
         
         
@@ -459,6 +581,25 @@
 
         <div class="article-details">
             <h2 class="article-title">Telegram图床搭建</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/git%E4%BF%AE%E6%94%B9/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://lsky.bangbang.site/g/2025/04/24/680a5d9bacf59.webp" loading="lazy" data-key="Git修改" data-hash="https://lsky.bangbang.site/g/2025/04/24/680a5d9bacf59.webp"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Git修改</h2>
         </div>
     </a>
 </article>
