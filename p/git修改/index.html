@@ -314,7 +314,7 @@
                 <time class="article-time--published">Apr 24, 2025</time>
             </div>
         
-
+    
         
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -325,12 +325,34 @@
 
 
 
-                <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                <time class="article-words">
+                    
+                    约1分钟，共45字
                 </time>
             </div>
         
+    
+        <div>
+            <svg t="1721405017758" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2344" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24">
+  <path d="M505.477547 832c-184.96 0-368.64-129.706667-478.848-251.093333a102.698667 102.698667 0 0 1-0.085334-137.898667C136.837547 321.621333 320.517547 192 505.43488 192l6.912 0.042667 6.229333-0.042667c184.917333 0 368.682667 129.621333 478.976 250.922667 35.498667 39.381333 35.541333 98.645333 0.085334 137.941333-110.336 121.429333-294.4 251.136-480.170667 251.136l-5.845333-0.042667-6.144 0.042667z m12.288-64c164.693333 0 331.392-118.869333 432.469333-230.144a38.784 38.784 0 0 0-0.085333-52.010667c-101.034667-111.104-267.434667-229.888-431.189334-229.888L511.536213 256h-5.589333C341.59488 256 175.06688 374.784 74.032213 485.973333a38.784 38.784 0 0 0 0.085334 52.010667C175.06688 649.130667 341.59488 768 506.160213 768l5.632-0.042667 5.973334 0.042667z" p-id="2345" fill="currentColor"></path>
+  <path d="M512.048213 704a192.213333 192.213333 0 0 1-192-192c0-105.856 86.144-192 192-192s192 86.144 192 192-86.144 192-192 192zM512.09088 384a128.170667 128.170667 0 0 0-128.042667 128c0 70.570667 57.429333 128 128 128s128-57.429333 128-128S582.61888 384 512.09088 384z" p-id="2346" fill="currentColor"></path>
+</svg>
+            <time class="article-pageview">
+                <span class="waline-pageview-count" data-path="/p/git%E4%BF%AE%E6%94%B9/">0</span> 次浏览
+            </time>
+        </div>
+    
+        <div>
+            <svg t="1721405452473" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2287" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24">
+  <path d="M853.333333 138.666667H170.666667c-40.533333 0-74.666667 34.133333-74.666667 74.666666v512c0 40.533333 34.133333 74.666667 74.666667 74.666667h151.466666V917.333333c0 12.8 8.533333 25.6 19.2 29.866667 4.266667 2.133333 8.533333 2.133333 12.8 2.133333 8.533333 0 17.066667-4.266667 23.466667-10.666666l136.533333-138.666667H853.333333c40.533333 0 74.666667-34.133333 74.666667-74.666667V213.333333c0-40.533333-34.133333-74.666667-74.666667-74.666666z m10.666667 586.666666c0 6.4-4.266667 10.666667-10.666667 10.666667H501.333333c-8.533333 0-17.066667 4.266667-23.466666 10.666667l-89.6 93.866666V768c0-17.066667-14.933333-32-32-32H170.666667c-6.4 0-10.666667-4.266667-10.666667-10.666667V213.333333c0-6.4 4.266667-10.666667 10.666667-10.666666h682.666666c6.4 0 10.666667 4.266667 10.666667 10.666666v512z" fill="currentColor" p-id="2288"></path>
+  <path d="M512 490.666667H298.666667c-17.066667 0-32 14.933333-32 32S281.6 554.666667 298.666667 554.666667h213.333333c17.066667 0 32-14.933333 32-32S529.066667 490.666667 512 490.666667zM672 341.333333H298.666667c-17.066667 0-32 14.933333-32 32S281.6 405.333333 298.666667 405.333333h373.333333c17.066667 0 32-14.933333 32-32s-14.933333-32-32-32z" fill="currentColor" p-id="2289"></path>
+</svg>
+            <time class="article-comment">
+                <span class="waline-comment-count" data-path="/p/git%E4%BF%AE%E6%94%B9/">0</span> 条评论
+            </time>
+        </div>
     </footer>
+    
     
 
     
@@ -436,8 +458,7 @@
      
     
         
-    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
-<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css"/>
 <div id="waline" class="waline-container"></div>
 <style>
     .waline-container {
@@ -450,14 +471,22 @@
     .waline-container .wl-count {
         color: var(--card-text-color-main);
     }
-</style><script>
-    
-    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"lang":"zh-CN","locale":{"admin":"zxsos","placeholder":null},"pageview":true,"requiredMeta":["name","email","url"],"serverURL":"https://waline-zxsos.vercel.app/"});
+</style><script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+    init({"comment":true,"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://unpkg.com/@waline/emojis@1.2.0/qq","https://unpkg.com/@waline/emojis@1.2.0/tw-emoji","https://unpkg.com/@waline/emojis@1.2.0/soul-emoji","https://unpkg.com/@waline/emojis@1.2.0/tieba","https://unpkg.com/@waline/emojis@1.2.0/bilibili","https://unpkg.com/@waline/emojis@1.2.0/bmoji","https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus"],"lang":"zh-CN","locale":{"admin":"站长","placeholder":"欢迎留下宝贵的评论！请留下正确的邮箱以便有回复时进行邮箱提醒，请勿发布任何与本文章无关的内容。","sofa":"还没有人评论哦！快来抢沙发吧~"},"pageview":true,"requiredMeta":["name","email","url"],"serverURL":"https://waline-zxsos.vercel.app/"});
 </script>
 
     
 
     <footer class="site-footer">
+    <script type="module">
+        import { pageviewCount } from 'https://unpkg.com/@waline/client@v3/dist/pageview.js';
+      
+        pageviewCount({
+          serverURL: "https:\/\/waline-zxsos.vercel.app\/"
+        });
+      </script>
+      
     <section class="copyright">
         &copy; 
         
@@ -468,6 +497,7 @@
          <br />
         
     </section>
+    
 </footer>
 
 
@@ -615,6 +645,7 @@ window.markmap = {
         if (document.readyState === "complete") NProgress.done();
     });
 </script>
+
 
     </body>
 </html>

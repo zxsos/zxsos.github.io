@@ -400,6 +400,14 @@
         
     </section>
 <footer class="site-footer">
+    <script type="module">
+        import { pageviewCount } from 'https://unpkg.com/@waline/client@v3/dist/pageview.js';
+      
+        pageviewCount({
+          serverURL: "https:\/\/waline-zxsos.vercel.app\/"
+        });
+      </script>
+      
     <section class="copyright">
         &copy; 
         
@@ -410,6 +418,7 @@
          <br />
         
     </section>
+    
 </footer>
 
 
@@ -479,6 +488,7 @@ window.markmap = {
         if (document.readyState === "complete") NProgress.done();
     });
 </script>
+
 
     </body>
 </html>

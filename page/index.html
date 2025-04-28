@@ -407,23 +407,27 @@
     </a>
 </article>
         
+            <article>
+    <a href="/search/">
+        <div class="article-details">
+            <h2 class="article-title">搜索</h2>
+            <footer class="article-time">
+                <time datetime='0001-01-01T00:00:00Z'>Jan 01, 0001</time>
+            </footer>
+        </div>
+    </a>
+</article>
+        
     </section>
-    <nav class='pagination'>
-        
-        
-
-        
-            
-                <span class='page-link current'>1</span>
-                
-            
-            
-                    <a class='page-link' href='/page/page/2/'>2</a>
-                
-            
-    </nav>
-
 <footer class="site-footer">
+    <script type="module">
+        import { pageviewCount } from 'https://unpkg.com/@waline/client@v3/dist/pageview.js';
+      
+        pageviewCount({
+          serverURL: "https:\/\/waline-zxsos.vercel.app\/"
+        });
+      </script>
+      
     <section class="copyright">
         &copy; 
         
@@ -434,6 +438,7 @@
          <br />
         
     </section>
+    
 </footer>
 
 
@@ -503,6 +508,7 @@ window.markmap = {
         if (document.readyState === "complete") NProgress.done();
     });
 </script>
+
 
     </body>
 </html>
