@@ -443,6 +443,394 @@ TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;&lt;/blockquote&gt
 &gt;&lt;/p&gt;
 </description>
         </item>
+        <item>
+        <title>Git修改</title>
+        <link>https://zxsos.github.io/p/git%E4%BF%AE%E6%94%B9/</link>
+        <pubDate>Thu, 24 Apr 2025 16:24:53 +0800</pubDate>
+        
+        <guid>https://zxsos.github.io/p/git%E4%BF%AE%E6%94%B9/</guid>
+        <description>&lt;img src="https://zxsos.pages.dev/file/pic/1745778090506_20250428022125434.png" alt="Featured image of post Git修改" /&gt;&lt;h2 id=&#34;修改仓库所有者和修改-commit-信息&#34;&gt;修改仓库所有者和修改 commit 信息
+&lt;/h2&gt;&lt;p&gt;(&lt;font color=&#34;#9bbb59&#34;&gt; 不会更改时间线 &lt;/font&gt;)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git filter-branch -f --env-filter &lt;span class=&#34;s1&#34;&gt;&amp;#39; GIT_AUTHOR_NAME=&amp;#34;zxsos&amp;#34; GIT_AUTHOR_EMAIL=&amp;#34;my@domain&amp;#34; GIT_COMMITTER_NAME=&amp;#34;zxsos&amp;#34; GIT_COMMITTER_EMAIL=&amp;#34;my@domain &amp;#39;&lt;/span&gt; --tag-name-filter cat -- --branches --tags
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;! 可能提示不安全被废弃&lt;/p&gt;
+&lt;h2 id=&#34;更好的解决方案bushi&#34;&gt;更好的解决方案（bushi）
+&lt;/h2&gt;&lt;p&gt;虽然可以继续用 filter-branch，但我强烈建议改用更安全的 &lt;code&gt;git filter-repo&lt;/code&gt;：&lt;/p&gt;
+&lt;p&gt;先安装（如果尚未安装）：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install git-filter-repo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;执行更安全的修改：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git filter-repo --name-callback &lt;span class=&#34;s2&#34;&gt;&amp;#34;return b&amp;#39;xxxx&amp;#39;&amp;#34;&lt;/span&gt; --email-callback &lt;span class=&#34;s2&#34;&gt;&amp;#34;return b&amp;#39;xxx@email.com&amp;#39;&amp;#34;&lt;/span&gt; --force
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>搭建Gitea</title>
+        <link>https://zxsos.github.io/p/set-up-gitea/</link>
+        <pubDate>Thu, 24 Apr 2025 15:55:12 +0800</pubDate>
+        
+        <guid>https://zxsos.github.io/p/set-up-gitea/</guid>
+        <description>&lt;img src="https://zxsos.pages.dev/file/pic/1745777619131_20250428021330748.png" alt="Featured image of post 搭建Gitea" /&gt;&lt;h2 id=&#34;1panel--gitea--docker--cloudflare--反代-教程&#34;&gt;1panel + gitea + docker + cloudflare + 反代 教程
+&lt;/h2&gt;&lt;h2 id=&#34;准备&#34;&gt;准备
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;服务器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cloudflare 账号&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;域名&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;pre class=&#34;markmap&#34;&gt;---
+markmap:
+  zoom: false
+  pan: false
+  height: 300px
+  backgroundColor: &amp;#34;#f8f8f8&amp;#34;
+---
+
+# **1panel &amp;#43; gitea &amp;#43; docker &amp;#43; cloudflare &amp;#43; 反代 教程**
+## 准备
+## **SSH 连接到服务器, 安装 1panel**
+### **RedHat/CentOS**
+### **Ubuntu**
+### **Debian**
+### **openEuler/ 其他系统**
+#### 安装 docker
+#### 安装 1Panel
+## **浏览器进入 1panel 中, 找到商店管理**
+### **安装 Mysql**
+### **Gitea 安装与 SSH 配置**
+#### **安装 Gitea**
+#### **修改 SSH 配置文件**
+##### 使用编辑器打开配置文件：
+##### 找到并修改端口参数, 取消注释
+##### 重启 SSH 服务
+### **Gitea 配置**
+#### 确认信息
+#### 开启电子邮件通知
+#### 创建管理员账号
+## **打开** [**Cloudflare**](https://www.cloudflare-cn.com/)
+### 添加域
+#### 修改 DNS
+#### SSL 证书
+#### 导入证书
+#### 反向代理
+#### 开启 HTTPS
+## 测试一下
+### 添加公钥 
+### 本地命令行输入&lt;/pre&gt;
+&lt;h2 id=&#34;ssh-连接到服务器-安装-1panel&#34;&gt;&lt;strong&gt;SSH 连接到服务器, 安装 1panel&lt;/strong&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;redhatcentos&#34;&gt;&lt;strong&gt;RedHat/CentOS&lt;/strong&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sh quick_start.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;ubuntu&#34;&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sudo bash quick_start.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;debian&#34;&gt;&lt;strong&gt;Debian&lt;/strong&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; bash quick_start.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;openeuler-其他系统&#34;&gt;&lt;strong&gt;openEuler/ 其他系统&lt;/strong&gt;
+&lt;/h3&gt;&lt;h4 id=&#34;安装-docker&#34;&gt;安装 docker
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -sSL https://linuxmirrors.cn/docker.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;安装-1panel&#34;&gt;安装 1Panel
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sh quick_start.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;浏览器进入-1panel-中-找到商店管理&#34;&gt;&lt;strong&gt;浏览器进入 1panel 中, 找到商店管理&lt;/strong&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;安装-mysql&#34;&gt;&lt;strong&gt;安装 Mysql&lt;/strong&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;版本 5.7+ 不要打开外部访问&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/680295eac9de1.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802944cdf187.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;gitea-安装与-ssh-配置&#34;&gt;&lt;strong&gt;Gitea 安装与 SSH 配置&lt;/strong&gt;
+&lt;/h3&gt;&lt;h4 id=&#34;安装-gitea&#34;&gt;&lt;strong&gt;安装 Gitea&lt;/strong&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802963007595.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt; &lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/68029658d18f0.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt; 打开外部端口访问, &lt;font color=&#34;#ff0000&#34;&gt; 域名可访问后记得关上 &lt;/font&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SSH 端口建议&lt;/strong&gt;： 推荐使用默认端口 &lt;code&gt;22&lt;/code&gt;，若选择其他端口（如 &lt;code&gt;222&lt;/code&gt; ），后续 Git 操作需使用格式： &lt;code&gt;git@XX:222&lt;/code&gt;  若可接受此格式可跳过修改 SSH 部分&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;修改-ssh-配置文件&#34;&gt;&lt;strong&gt;修改 SSH 配置文件&lt;/strong&gt;
+&lt;/h4&gt;&lt;h5 id=&#34;使用编辑器打开配置文件&#34;&gt;使用编辑器打开配置文件
+&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo vi /etc/ssh/sshd_config
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;或者在 1panel 系统 &amp;gt; 文件中打开(建议)&lt;/p&gt;
+&lt;h5 id=&#34;找到并修改端口参数-取消注释&#34;&gt;找到并修改端口参数, 取消注释
+&lt;/h5&gt;&lt;blockquote&gt;
+&lt;p&gt;# Port 22
+改为
+Port 2223&lt;/p&gt;&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;vim 操作说明：
+&lt;ul&gt;
+&lt;li&gt;按 &lt;code&gt;i&lt;/code&gt; 进入编辑模式&lt;/li&gt;
+&lt;li&gt;删除 &lt;code&gt;#&lt;/code&gt; 取消注释&lt;/li&gt;
+&lt;li&gt;修改端口号后，按 &lt;code&gt;ESC&lt;/code&gt; → 输入 &lt;code&gt;:wq&lt;/code&gt; 保存退出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;重启-ssh-服务&#34;&gt;重启 SSH 服务
+&lt;/h5&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  sudo systemctl restart sshd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;gitea-配置&#34;&gt;&lt;strong&gt;Gitea 配置&lt;/strong&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;span id=&#34;jump&#34;&gt; 跳过端口修改 &lt;/span&gt;
+默认是 &lt;code&gt;ip:3000&lt;/code&gt; 以下部分可以不用修改
+&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802a8e88b10e.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;确认信息&#34;&gt;确认信息
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802aa7142011.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;开启电子邮件通知&#34;&gt;开启电子邮件通知
+&lt;/h4&gt;&lt;p&gt;这部分可参考 &lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/643897161&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;知乎-如何开启 QQ SMTP&lt;/a&gt;
+可使用第三方 &lt;a class=&#34;link&#34; href=&#34;https://www.mailersend.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Email Sending Service&lt;/a&gt;
+&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802aaa39e8ad.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;创建管理员账号&#34;&gt;创建管理员账号
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802abd513e56.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;打开-cloudflare&#34;&gt;&lt;strong&gt;打开&lt;/strong&gt; &lt;a class=&#34;link&#34; href=&#34;https://www.cloudflare-cn.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;Cloudflare&lt;/strong&gt;&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;如果域名商有免费 SSL 证书, 那就用 , 跳过这步, 主要是泛域名太贵, cf 可以免费, 如果你只搭建 Gitea 那么推荐到原服务商获取证书, 或者在 1panel 获取 SSl 证书&lt;/p&gt;
+&lt;h3 id=&#34;添加域&#34;&gt;添加域
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802afdc5cd8c.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;修改-dns&#34;&gt;修改 DNS
+&lt;/h4&gt;&lt;p&gt;按提示修改服务商 默认 DNS 为 CF 的 DNS 解析域名, 由于 SSH 的局限性不使用代理, 打开代理后 SSH 连接到的是代理主机
+&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/21/680520f0c3723.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;ssl-证书&#34;&gt;SSL 证书
+&lt;/h4&gt;&lt;p&gt;创建证书 -&amp;gt; 下载证书
+&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802b1515e381.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;
+修改加密为完全(严格)
+&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802b3b2522da.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;导入证书&#34;&gt;导入证书
+&lt;/h4&gt;&lt;p&gt;拿到证书后回到 1panel 点击 &lt;strong&gt;网站&lt;/strong&gt;-&amp;gt; &lt;strong&gt;证书&lt;/strong&gt;-&amp;gt; &lt;strong&gt;上传证书&lt;/strong&gt; 填写信息或导入
+&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802b236ba18a.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;反向代理&#34;&gt;反向代理
+&lt;/h4&gt;&lt;p&gt;然后点击 &lt;strong&gt;网站&lt;/strong&gt; -&amp;gt; &lt;strong&gt;创建&lt;/strong&gt; , 选择反向代理
+&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802b2dc1dbd8.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;开启-https&#34;&gt;开启 HTTPS
+&lt;/h4&gt;&lt;p&gt;确定后点击网站 &lt;strong&gt;配置&lt;/strong&gt; 开启 HTTPS
+&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802b34536855.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt; 关闭 Gitea 外部端口访问, 只允许域名访问&lt;/p&gt;
+&lt;p&gt;到此结束 可以通过域名正常访问了, 也可以通过 SSH 拉取推送&lt;/p&gt;
+&lt;h2 id=&#34;测试一下&#34;&gt;测试一下
+&lt;/h2&gt;&lt;h3 id=&#34;添加公钥&#34;&gt;添加公钥
+&lt;/h3&gt;&lt;h3 id=&#34;本地命令行输入&#34;&gt;本地命令行输入
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;SSH -T git@域名
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果出现以下返回就没问题了
+&lt;code&gt;Hi there, XXXX! You&#39;ve successfully authenticated with the key named Gitea, but Gitea does not provide shell access.&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
         
     </channel>
 </rss>

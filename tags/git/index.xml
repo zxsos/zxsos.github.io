@@ -7,46 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>zxsos</copyright>
-        <lastBuildDate>Thu, 24 Apr 2025 16:24:53 +0800</lastBuildDate><atom:link href="https://zxsos.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Git修改</title>
-        <link>https://zxsos.github.io/p/git%E4%BF%AE%E6%94%B9/</link>
-        <pubDate>Thu, 24 Apr 2025 16:24:53 +0800</pubDate>
-        
-        <guid>https://zxsos.github.io/p/git%E4%BF%AE%E6%94%B9/</guid>
-        <description>&lt;img src="https://zxsos.pages.dev/file/pic/1745778090506_20250428022125434.png" alt="Featured image of post Git修改" /&gt;&lt;h2 id=&#34;修改仓库所有者和修改-commit-信息&#34;&gt;修改仓库所有者和修改 commit 信息
-&lt;/h2&gt;&lt;p&gt;(&lt;font color=&#34;#9bbb59&#34;&gt; 不会更改时间线 &lt;/font&gt;)&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git filter-branch -f --env-filter &lt;span class=&#34;s1&#34;&gt;&amp;#39; GIT_AUTHOR_NAME=&amp;#34;zxsos&amp;#34; GIT_AUTHOR_EMAIL=&amp;#34;my@domain&amp;#34; GIT_COMMITTER_NAME=&amp;#34;zxsos&amp;#34; GIT_COMMITTER_EMAIL=&amp;#34;my@domain &amp;#39;&lt;/span&gt; --tag-name-filter cat -- --branches --tags
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;! 可能提示不安全被废弃&lt;/p&gt;
-&lt;h2 id=&#34;更好的解决方案bushi&#34;&gt;更好的解决方案（bushi）
-&lt;/h2&gt;&lt;p&gt;虽然可以继续用 filter-branch，但我强烈建议改用更安全的 &lt;code&gt;git filter-repo&lt;/code&gt;：&lt;/p&gt;
-&lt;p&gt;先安装（如果尚未安装）：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install git-filter-repo
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;执行更安全的修改：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git filter-repo --name-callback &lt;span class=&#34;s2&#34;&gt;&amp;#34;return b&amp;#39;xxxx&amp;#39;&amp;#34;&lt;/span&gt; --email-callback &lt;span class=&#34;s2&#34;&gt;&amp;#34;return b&amp;#39;xxx@email.com&amp;#39;&amp;#34;&lt;/span&gt; --force
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-        </item>
-        <item>
+        <lastBuildDate>Thu, 24 Apr 2025 15:55:12 +0800</lastBuildDate><atom:link href="https://zxsos.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>搭建Gitea</title>
         <link>https://zxsos.github.io/p/set-up-gitea/</link>
         <pubDate>Thu, 24 Apr 2025 15:55:12 +0800</pubDate>

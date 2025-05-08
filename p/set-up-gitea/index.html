@@ -10,7 +10,7 @@
 <meta property='og:description' content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare 账号\n域名\n--- markmap: zoom: false pan: false height: 300px backgroundColor: &#34;#f8f8f8&#34; --- # **1panel &#43; gitea &#43; docker &#43; cloudflare &#43; 反代 教程** ## 准备 ## **SSH 连接到服务器, 安装 1panel** ### **RedHat/CentOS** ### **Ubuntu** ### **Debian** ### **openEuler/ 其他系统** #### 安装 docker #### 安装 1Panel ## **浏览器进入 1panel 中, 找到商店管理** ### **安装 Mysql** ### **Gitea 安装与 SSH 配置** #### **安装 Gitea** #### **修改 SSH 配置文件** ##### 使用编辑器打开配置文件： ##### 找到并修改端口参数, 取消注释 ##### 重启 SSH 服务 ### **Gitea 配置** #### 确认信息 #### 开启电子邮件通知 #### 创建管理员账号 ## **打开** [**Cloudflare**](https://www.cloudflare-cn.com/) ### 添加域 #### 修改 DNS #### SSL 证书 #### 导入证书 #### 反向代理 #### 开启 HTTPS ## 测试一下 ### 添加公钥 ### 本地命令行输入 SSH 连接到服务器, 安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中, 找到商店管理 安装 Mysql 版本 5.7+ 不要打开外部访问\n">
 <meta property='og:url' content='https://zxsos.github.io/p/set-up-gitea/'>
 <meta property='og:site_name' content='zxsos'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Git' /><meta property='article:tag' content='Docker' /><meta property='article:tag' content='1panel' /><meta property='article:tag' content='CloudFlare' /><meta property='article:published_time' content='2025-04-24T15:55:12&#43;08:00'/><meta property='article:modified_time' content='2025-04-24T15:55:12&#43;08:00'/><meta property='og:image' content='https://zxsos.pages.dev/file/pic/1745777619131_20250428021330748.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='教程' /><meta property='article:tag' content='Git' /><meta property='article:tag' content='Docker' /><meta property='article:published_time' content='2025-04-24T15:55:12&#43;08:00'/><meta property='article:modified_time' content='2025-04-24T15:55:12&#43;08:00'/><meta property='og:image' content='https://zxsos.pages.dev/file/pic/1745777619131_20250428021330748.png' />
 <meta name="twitter:title" content="搭建Gitea">
 <meta name="twitter:description" content="1panel + gitea + docker + cloudflare + 反代 教程 准备 服务器\nCloudflare 账号\n域名\n--- markmap: zoom: false pan: false height: 300px backgroundColor: &#34;#f8f8f8&#34; --- # **1panel &#43; gitea &#43; docker &#43; cloudflare &#43; 反代 教程** ## 准备 ## **SSH 连接到服务器, 安装 1panel** ### **RedHat/CentOS** ### **Ubuntu** ### **Debian** ### **openEuler/ 其他系统** #### 安装 docker #### 安装 1Panel ## **浏览器进入 1panel 中, 找到商店管理** ### **安装 Mysql** ### **Gitea 安装与 SSH 配置** #### **安装 Gitea** #### **修改 SSH 配置文件** ##### 使用编辑器打开配置文件： ##### 找到并修改端口参数, 取消注释 ##### 重启 SSH 服务 ### **Gitea 配置** #### 确认信息 #### 开启电子邮件通知 #### 创建管理员账号 ## **打开** [**Cloudflare**](https://www.cloudflare-cn.com/) ### 添加域 #### 修改 DNS #### SSL 证书 #### 导入证书 #### 反向代理 #### 开启 HTTPS ## 测试一下 ### 添加公钥 ### 本地命令行输入 SSH 连接到服务器, 安装 1panel RedHat/CentOS 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh Ubuntu 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sudo bash quick_start.sh Debian 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; bash quick_start.sh openEuler/ 其他系统 安装 docker 1 curl -sSL https://linuxmirrors.cn/docker.sh 安装 1Panel 1 curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh &amp;&amp; sh quick_start.sh 浏览器进入 1panel 中, 找到商店管理 安装 Mysql 版本 5.7+ 不要打开外部访问\n"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://zxsos.pages.dev/file/pic/1745777619131_20250428021330748.png' />
@@ -330,8 +330,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E6%95%99%E7%A8%8B/" >
-                教程
+            <a href="/categories/%E8%87%AA%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" style="background-color: #2a9d8f; color: #fff;">
+                自搭建教程
             </a>
         
     </header>
@@ -762,13 +762,11 @@ Port 2223</p></blockquote>
     
     <section class="article-tags">
         
+            <a href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+        
             <a href="/tags/git/">Git</a>
         
             <a href="/tags/docker/">Docker</a>
-        
-            <a href="/tags/1panel/">1panel</a>
-        
-            <a href="/tags/cloudflare/">CloudFlare</a>
         
     </section>
 
@@ -825,6 +823,19 @@ Port 2223</p></blockquote>
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/telegram-bot-img-upload/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Tg-bot</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="has-image">
