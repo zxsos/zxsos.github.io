@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>zxsos</copyright>
-        <lastBuildDate>Sat, 26 Apr 2025 15:57:04 +0800</lastBuildDate><atom:link href="https://zxsos.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 09 May 2025 00:28:41 +0800</lastBuildDate><atom:link href="https://zxsos.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>笔记</title>
+        <link>https://zxsos.github.io/categories/%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Fri, 09 May 2025 00:28:41 +0800</pubDate>
+        
+        <guid>https://zxsos.github.io/categories/%E7%AC%94%E8%AE%B0/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>自搭建教程</title>
         <link>https://zxsos.github.io/categories/%E8%87%AA%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</link>
         <pubDate>Sat, 26 Apr 2025 15:57:04 +0800</pubDate>
@@ -16,12 +24,12 @@
         <description>&lt;img src="https://zxsos.pages.dev/file/pic/1745782280479_20250428033116889.gif" alt="Featured image of post 自搭建教程" /&gt;</description>
         </item>
         <item>
-        <title>Git</title>
-        <link>https://zxsos.github.io/categories/git/</link>
-        <pubDate>Thu, 24 Apr 2025 16:24:53 +0800</pubDate>
+        <title>教程</title>
+        <link>https://zxsos.github.io/categories/%E6%95%99%E7%A8%8B/</link>
+        <pubDate>Thu, 24 Apr 2025 20:21:04 +0800</pubDate>
         
-        <guid>https://zxsos.github.io/categories/git/</guid>
-        <description>&lt;img src="https://zxsos.pages.dev/file/pic/1745778090506_20250428022125434.png" alt="Featured image of post Git" /&gt;</description>
+        <guid>https://zxsos.github.io/categories/%E6%95%99%E7%A8%8B/</guid>
+        <description></description>
         </item>
         <item>
         <title>Docker</title>
@@ -30,6 +38,14 @@
         
         <guid>https://zxsos.github.io/categories/docker/</guid>
         <description>&lt;img src="https://zxsos.pages.dev/file/pic/1745781270069_20250428031418866.png" alt="Featured image of post Docker" /&gt;</description>
+        </item>
+        <item>
+        <title>Git</title>
+        <link>https://zxsos.github.io/categories/git/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://zxsos.github.io/categories/git/</guid>
+        <description>&lt;img src="https://zxsos.pages.dev/file/pic/1745778090506_20250428022125434.png" alt="Featured image of post Git" /&gt;</description>
         </item>
         <item>
         <title>默认</title>
