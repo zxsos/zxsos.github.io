@@ -321,13 +321,13 @@ markmap:
 &lt;h2 id=&#34;cloudflare-设置&#34;&gt;cloudflare 设置
 &lt;/h2&gt;&lt;h3 id=&#34;creat-page&#34;&gt;Creat Page
 &lt;/h3&gt;&lt;p&gt;打开 cloudflare，点击左边的 work&amp;amp;page，接着点击 creat：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/1745569093715_image-20250425161803692.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1746882494261_20250510210806428.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;image-20250425161803692&#34;
+		alt=&#34;image-20250510210806183&#34;
 	
 	
 &gt;&lt;/p&gt;
@@ -344,36 +344,36 @@ markmap:
 &gt;&lt;/p&gt;
 &lt;p&gt;点击 setup，下一个页面不需要设置，直接点击下一步直至部署完成。&lt;/p&gt;
 &lt;h3 id=&#34;设置-kv&#34;&gt;设置 kv
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMQZt_UCOIq62fE0z5bFN5aaodKwGMAAte9MRt2LwFXH2nrhstgnPYBAAMCAAN3AAM2BA.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5c29789%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20250510210839821.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;设置 kv&#34;
+		alt=&#34;image-20250510210839821&#34;
 	
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;namespacename 填写: &lt;code&gt;img_url&lt;/code&gt;，点击 add：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMRZt_URL9tqyob4uhUTmoZqsuj1X0AAti9MRt2LwFXRG4XEUu1vzABAAMCAAN5AAM2BA.png&#34;
+&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5c29789%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20250510210916960.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;img_url&#34;
+		alt=&#34;image-20250510210916960&#34;
 	
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;绑定-kv&#34;&gt;绑定 kv
 &lt;/h3&gt;&lt;p&gt;回到 workpage，点击自己项目进去 setting，找到下图的位置，添加 img_url，绑定到刚才添加的 kv：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMSZt_VHhOYAYVnWASRZAR69NpdxcEAAtq9MRt2LwFX5M8zmrlxzbIBAAMCAAN3AAM2BA.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1746882612308_20250510210959244.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;绑定 kv&#34;
+		alt=&#34;image-20250510210959102&#34;
 	
 	
 &gt;&lt;/p&gt;
@@ -384,60 +384,60 @@ BASIC_PASS = 后台管理密码
 BASIC_USER = 后台管理用户名
 TG_BOT_TOKEN = 刚才让记下的添加的机器人的 api
 TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMUZt_WeOiS1PC1O_in6opg5keBJGcAAt29MRt2LwFX97SwRlyIOBQBAAMCAAN3AAM2BA.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1746882639283_20250510211028290.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;添加变量&#34;
+		alt=&#34;image-20250510211028112&#34;
 	
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;re-部署&#34;&gt;RE 部署
 &lt;/h3&gt;&lt;p&gt;再重新部署一遍，就能使用了：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMbZt_a5_2Vx4mJGSumLexWmo1QLfsAAue9MRt2LwFXXJZYpq5jVNABAAMCAAN3AAM2BA.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1746882661093_20250510211056720.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;重新部署&#34;
+		alt=&#34;image-20250510211056544&#34;
 	
 	
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;网址是 cf 给你的地址：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMcZt_bXkoAAU57aeFUVwjS1t_idFYHAALovTEbdi8BV119WGUt9on9AQADAgADeAADNgQ.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1746882690044_20250510211120392.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;网址&#34;
+		alt=&#34;image-20250510211120267&#34;
 	
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;也可以绑定自己的域名：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMXZt_YPzfVMm1oyywIhAIL9uOaKm0AAuG9MRt2LwFXnZpoExSLB2QBAAMCAAN3AAM2BA.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1746882712667_20250510211143320.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;绑定域名&#34;
+		alt=&#34;image-20250510211143184&#34;
 	
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;结束&#34;&gt;结束
 &lt;/h3&gt;&lt;p&gt;至此大功告成，输入域名就能访问了：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMYZt_YbpwZKdUU--13sxHLaswWjFEAAuK9MRt2LwFXp4AQswMc1FUBAAMCAAN3AAM2BA.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1746882736340_20250510211205192.png&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;主页&#34;
+		alt=&#34;image-20250510211204976&#34;
 	
 	
 &gt;&lt;/p&gt;
