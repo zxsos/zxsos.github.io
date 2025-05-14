@@ -125,7 +125,7 @@ markmap:
 &lt;p&gt;版本 5.7+ 不要打开外部访问&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/680295eac9de1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256963392_20250515050914183.webp&#34;
 	
 	
 	
@@ -135,7 +135,7 @@ markmap:
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802944cdf187.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256968750_20250515050916145.webp&#34;
 	
 	
 	
@@ -149,7 +149,7 @@ markmap:
 &lt;/ul&gt;
 &lt;h3 id=&#34;gitea-安装与-ssh-配置&#34;&gt;&lt;strong&gt;Gitea 安装与 SSH 配置&lt;/strong&gt;
 &lt;/h3&gt;&lt;h4 id=&#34;安装-gitea&#34;&gt;&lt;strong&gt;安装 Gitea&lt;/strong&gt;
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802963007595.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256986051_20250515050936345.webp&#34;
 	
 	
 	
@@ -158,7 +158,7 @@ markmap:
 		alt=&#34;image.png&#34;
 	
 	
-&gt; &lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/68029658d18f0.png&#34;
+&gt; &lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256989084_20250515050938361.webp&#34;
 	
 	
 	
@@ -208,7 +208,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 &lt;/div&gt;&lt;h3 id=&#34;gitea-配置&#34;&gt;&lt;strong&gt;Gitea 配置&lt;/strong&gt;
 &lt;/h3&gt;&lt;p&gt;&lt;span id=&#34;jump&#34;&gt; 跳过端口修改 &lt;/span&gt;
 默认是 &lt;code&gt;ip:3000&lt;/code&gt; 以下部分可以不用修改
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802a8e88b10e.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256995404_20250515050941803.webp&#34;
 	
 	
 	
@@ -219,7 +219,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;确认信息&#34;&gt;确认信息
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802aa7142011.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256991251_20250515050943373.webp&#34;
 	
 	
 	
@@ -234,7 +234,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
     &gt;知乎-如何开启 QQ SMTP&lt;/a&gt;
 可使用第三方 &lt;a class=&#34;link&#34; href=&#34;https://www.mailersend.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Email Sending Service&lt;/a&gt;
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802aaa39e8ad.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256992767_20250515050944600.webp&#34;
 	
 	
 	
@@ -245,7 +245,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;创建管理员账号&#34;&gt;创建管理员账号
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802abd513e56.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256992242_20250515050944228.webp&#34;
 	
 	
 	
@@ -259,7 +259,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
     &gt;&lt;strong&gt;Cloudflare&lt;/strong&gt;&lt;/a&gt;
 &lt;/h2&gt;&lt;p&gt;如果域名商有免费 SSL 证书, 那就用 , 跳过这步, 主要是泛域名太贵, cf 可以免费, 如果你只搭建 Gitea 那么推荐到原服务商获取证书, 或者在 1panel 获取 SSl 证书&lt;/p&gt;
 &lt;h3 id=&#34;添加域&#34;&gt;添加域
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802afdc5cd8c.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257007214_20250515051000182.webp&#34;
 	
 	
 	
@@ -271,7 +271,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;修改-dns&#34;&gt;修改 DNS
 &lt;/h4&gt;&lt;p&gt;按提示修改服务商 默认 DNS 为 CF 的 DNS 解析域名, 由于 SSH 的局限性不使用代理, 打开代理后 SSH 连接到的是代理主机
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/21/680520f0c3723.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257008925_20250515051001317.webp&#34;
 	
 	
 	
@@ -283,7 +283,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;ssl-证书&#34;&gt;SSL 证书
 &lt;/h4&gt;&lt;p&gt;创建证书 -&amp;gt; 下载证书
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802b1515e381.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257001567_20250515050948215.webp&#34;
 	
 	
 	
@@ -294,7 +294,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 	
 &gt;
 修改加密为完全(严格)
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802b3b2522da.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257015871_20250515051007675.webp&#34;
 	
 	
 	
@@ -306,7 +306,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;导入证书&#34;&gt;导入证书
 &lt;/h4&gt;&lt;p&gt;拿到证书后回到 1panel 点击 &lt;strong&gt;网站&lt;/strong&gt;-&amp;gt; &lt;strong&gt;证书&lt;/strong&gt;-&amp;gt; &lt;strong&gt;上传证书&lt;/strong&gt; 填写信息或导入
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802b236ba18a.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257018906_20250515051011227.webp&#34;
 	
 	
 	
@@ -318,7 +318,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;反向代理&#34;&gt;反向代理
 &lt;/h4&gt;&lt;p&gt;然后点击 &lt;strong&gt;网站&lt;/strong&gt; -&amp;gt; &lt;strong&gt;创建&lt;/strong&gt; , 选择反向代理
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802b2dc1dbd8.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257028573_20250515051014478.webp&#34;
 	
 	
 	
@@ -330,7 +330,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;开启-https&#34;&gt;开启 HTTPS
 &lt;/h4&gt;&lt;p&gt;确定后点击网站 &lt;strong&gt;配置&lt;/strong&gt; 开启 HTTPS
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802b34536855.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257029638_20250515051016680.webp&#34;
 	
 	
 	

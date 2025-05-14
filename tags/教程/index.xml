@@ -7,203 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>zxsos</copyright>
-        <lastBuildDate>Sat, 26 Apr 2025 15:57:04 +0800</lastBuildDate><atom:link href="https://zxsos.github.io/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Tg-bot</title>
-        <link>https://zxsos.github.io/p/telegram-bot-img-upload/</link>
-        <pubDate>Sat, 26 Apr 2025 15:57:04 +0800</pubDate>
-        
-        <guid>https://zxsos.github.io/p/telegram-bot-img-upload/</guid>
-        <description>&lt;p&gt;项目地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/zxsos/tg-image-bot&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;tg-bot&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;前言&#34;&gt;前言
-&lt;/h2&gt;&lt;p&gt;什么情况会用上&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;手动上传&lt;/li&gt;
-&lt;li&gt;批量上传&lt;/li&gt;
-&lt;li&gt;转发上传&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这是一个部署在 Cloudflare Workers 上的 Telegram 机器人。它可以接收您发送到 Telegram 的图片和视频文件，并将它们自动上传到您指定的图床或对象存储服务（需要有公开的上传接口），然后将生成的公开链接返回给您。&lt;/p&gt;
-&lt;p&gt;本项目利用 Cloudflare Workers 的 Serverless 特性，可以实现低成本甚至免费（在 Cloudflare 免费额度内）运行。&lt;/p&gt;
-&lt;h2 id=&#34;-功能特性&#34;&gt;✨ 功能特性
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;自动上传&lt;/strong&gt;: 直接向机器人发送图片或视频即可触发上传。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;支持图片和视频&lt;/strong&gt;: 可以处理常见的图片格式和视频格式（作为视频文件或文档发送）。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;配置灵活&lt;/strong&gt;: 通过 Cloudflare 环境变量和 Secrets 配置图床地址、Bot Token 和可选的认证信息，无需修改代码。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;部署简单&lt;/strong&gt;: 基于 Cloudflare Workers，部署流程相对简单。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;低成本&lt;/strong&gt;: 利用 Cloudflare 的免费套餐额度。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;安全&lt;/strong&gt;: 敏感信息（如 Bot Token、认证代码）通过 Secrets 管理，更加安全。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;-工作原理&#34;&gt;🚀 工作原理
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;用户在 Telegram 中向此机器人发送图片或视频。&lt;/li&gt;
-&lt;li&gt;Telegram 将包含文件信息的更新（Update）通过 Webhook 发送到 Cloudflare Worker 的 URL。&lt;/li&gt;
-&lt;li&gt;Cloudflare Worker 脚本被触发，解析收到的更新。&lt;/li&gt;
-&lt;li&gt;Worker 使用 Telegram Bot API 下载用户发送的文件。&lt;/li&gt;
-&lt;li&gt;Worker 将下载的文件上传到在环境变量 &lt;code&gt;IMG_BED_URL&lt;/code&gt; 中配置的图床地址，（如果配置了 &lt;code&gt;AUTH_CODE&lt;/code&gt;）会携带相应的认证参数。&lt;/li&gt;
-&lt;li&gt;Worker 解析图床返回的响应，提取公开的文件链接。&lt;/li&gt;
-&lt;li&gt;Worker 使用 Telegram Bot API 将获取到的文件链接发送回给用户。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;-环境要求&#34;&gt;🔧 环境要求
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;一个 Telegram Bot&lt;/strong&gt;: 需要通过 &lt;a class=&#34;link&#34; href=&#34;https://t.me/BotFather&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;BotFather&lt;/a&gt; 创建，并获取其 &lt;strong&gt;Bot Token&lt;/strong&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;一个图床/对象存储服务&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;需要提供一个公开的 &lt;strong&gt;文件上传接口 URL&lt;/strong&gt; (&lt;code&gt;IMG_BED_URL&lt;/code&gt;)。&lt;/li&gt;
-&lt;li&gt;如果该接口需要认证，需要获取相应的 &lt;strong&gt;认证代码&lt;/strong&gt; (&lt;code&gt;AUTH_CODE&lt;/code&gt;)。常见的简单图床可能通过 URL 参数或 Header 进行认证，本项目代码目前实现了通过 URL 参数 (&lt;code&gt;authCode&lt;/code&gt;) 传递认证信息。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;一个 Cloudflare 账户&lt;/strong&gt;: 免费账户即可开始。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;-部署与配置步骤&#34;&gt;🛠️ 部署与配置步骤
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;创建 Telegram Bot&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在 Telegram 中与 &lt;a class=&#34;link&#34; href=&#34;https://t.me/BotFather&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;@BotFather&lt;/a&gt; 对话。&lt;/li&gt;
-&lt;li&gt;发送 &lt;code&gt;/newbot&lt;/code&gt; 命令，按照提示设置机器人的名称和用户名。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;记下 BotFather 返回的 &lt;code&gt;HTTP API token&lt;/code&gt;&lt;/strong&gt;，这就是您的 &lt;code&gt;BOT_TOKEN&lt;/code&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;准备图床信息&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;确定您的图床或对象存储服务的 &lt;strong&gt;上传接口 URL&lt;/strong&gt; (例如 &lt;code&gt;https://your.domain/upload&lt;/code&gt;)。这将是 &lt;code&gt;IMG_BED_URL&lt;/code&gt; 的值。&lt;/li&gt;
-&lt;li&gt;如果上传需要认证码，&lt;strong&gt;获取该认证码&lt;/strong&gt;。这将是 &lt;code&gt;AUTH_CODE&lt;/code&gt; 的值。如果不需要认证，则此项为空。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Fork 本项目&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Fork 本仓库。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;部署 CloudFlare Worker&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;em&gt;方法&lt;/em&gt;： 登录 Cloudflare -&amp;gt; Workers &amp;amp; Pages -&amp;gt; 创建 -&amp;gt; 导入存储库选择刚刚 fork 的仓库 -&amp;gt; 填入部署命令 &lt;code&gt;npx wrangler deploy&lt;/code&gt; -&amp;gt; 保存并部署&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;部署成功后，Wrangler 会输出您的 Worker 的访问 URL，例如 &lt;code&gt;https://your-worker-name.your-subdomain.workers.dev&lt;/code&gt;。&lt;strong&gt;记下这个 URL&lt;/strong&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;配置环境变量 (关键步骤)&lt;/strong&gt;:
-您可以通过 Cloudflare Worker 仪表板设置。&lt;strong&gt;推荐使用密钥存储敏感信息&lt;/strong&gt;。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;设置 &lt;code&gt;BOT_TOKEN&lt;/code&gt;&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;网页方法&lt;/em&gt;: 登录 Cloudflare -&amp;gt; Workers &amp;amp; Pages -&amp;gt; 您的 Worker -&amp;gt; Settings -&amp;gt; Variables -&amp;gt; Add variable -&amp;gt; 输入 &lt;code&gt;BOT_TOKEN&lt;/code&gt; -&amp;gt; 粘贴 Token -&amp;gt; &lt;strong&gt;点击 &amp;ldquo;Encrypt&amp;rdquo;&lt;/strong&gt; -&amp;gt; Save。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;设置 &lt;code&gt;AUTH_CODE&lt;/code&gt;(选填)&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;网页方法&lt;/em&gt;: 类似 BOT_TOKEN，添加名为 &lt;code&gt;AUTH_CODE&lt;/code&gt; 的变量，粘贴认证码，&lt;strong&gt;点击 &amp;ldquo;Encrypt&amp;rdquo;&lt;/strong&gt; -&amp;gt; Save。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;设置 &lt;code&gt;IMG_BED_URL&lt;/code&gt;&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;网页方法&lt;/em&gt;: 登录 Cloudflare -&amp;gt; Workers &amp;amp; Pages -&amp;gt; 您的 Worker -&amp;gt; Settings -&amp;gt; Variables -&amp;gt; Add variable -&amp;gt; 输入 &lt;code&gt;IMG_BED_URL&lt;/code&gt; -&amp;gt; 粘贴图床上传 URL -&amp;gt; Save。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;设置 Telegram Webhook&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;需要告诉 Telegram 将机器人的更新发送到您刚刚部署的 Worker URL。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;打开浏览器，或者使用 &lt;code&gt;curl&lt;/code&gt; 工具，访问以下链接（&lt;strong&gt;请务必替换 &lt;code&gt;&amp;lt;YOUR_BOT_TOKEN&amp;gt;&lt;/code&gt; 和 &lt;code&gt;&amp;lt;YOUR_WORKER_URL&amp;gt;&lt;/code&gt;&lt;/strong&gt;）：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://api.telegram.org/botID/setWebhook?url=domain
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;例如:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;api&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;telegram&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;org&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;bot123456&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ABC&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;DEF1234&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;setWebhook&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;my&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;tg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;uploader&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;myusername&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;workers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dev&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;如果浏览器显示 &lt;code&gt;{&amp;quot;ok&amp;quot;:true,&amp;quot;result&amp;quot;:true,&amp;quot;description&amp;quot;:&amp;quot;Webhook was set&amp;quot;}&lt;/code&gt; 或类似信息，则表示设置成功。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;-如何使用&#34;&gt;💬 如何使用
-&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;在 Telegram 中搜索您创建的机器人的用户名，并开始对话。&lt;/li&gt;
-&lt;li&gt;发送 &lt;code&gt;/start&lt;/code&gt; 命令给机器人（通常只需要第一次）。&lt;/li&gt;
-&lt;li&gt;发送 &lt;code&gt;/help&lt;/code&gt; 命令可以查看简单的使用说明。&lt;/li&gt;
-&lt;li&gt;直接发送一张 &lt;strong&gt;图片&lt;/strong&gt; 或一个 &lt;strong&gt;视频文件&lt;/strong&gt; 给机器人。&lt;/li&gt;
-&lt;li&gt;等待片刻，机器人会将上传后的公开链接回复给您。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;设置机器人命令菜单-可选&#34;&gt;设置机器人命令菜单 (可选)
-&lt;/h2&gt;&lt;p&gt;为了让用户在 Telegram 中更方便地使用 &lt;code&gt;/start&lt;/code&gt; 和 &lt;code&gt;/help&lt;/code&gt; 命令（例如通过点击输入框旁边的 &lt;code&gt;/&lt;/code&gt; 按钮），您可以通过 BotFather 设置命令列表。这能提供命令提示，改善用户体验。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;在 Telegram 中再次与 &lt;a class=&#34;link&#34; href=&#34;https://t.me/BotFather&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;@BotFather&lt;/a&gt; 对话。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;发送 &lt;code&gt;/setcommands&lt;/code&gt; 命令。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;按照提示，选择您刚刚部署配置好的机器人。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;直接发送以下文本&lt;/strong&gt;（确保命令和描述之间有空格和连字符，并且每个命令占一行，可以进行修改）：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;start - 启用机器人
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;help - 查看帮助信息
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;设置成功后，用户在与您的机器人对话时，点击 &lt;code&gt;/&lt;/code&gt; 按钮就能看到这些预设的命令选项了。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        </item>
-        <item>
+        <lastBuildDate>Thu, 24 Apr 2025 20:21:04 +0800</lastBuildDate><atom:link href="https://zxsos.github.io/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Telegram图床搭建</title>
         <link>https://zxsos.github.io/p/telegram%E5%9B%BE%E5%BA%8A%E6%90%AD%E5%BB%BA/</link>
         <pubDate>Thu, 24 Apr 2025 20:21:04 +0800</pubDate>
@@ -242,7 +46,7 @@ markmap:
 &lt;/h2&gt;&lt;h3 id=&#34;fork-仓库&#34;&gt;fork 仓库
 &lt;/h3&gt;&lt;p&gt;进入 GitHub 项目主页：&lt;a class=&#34;link&#34; href=&#34;https://github.com/MarSeventh/CloudFlare-ImgBed&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;点击跳转&lt;/a&gt;，点击 fork&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/1745568849265_image-20250425161358693.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257047812_20250515051034948.webp&#34;
 	
 	
 	
@@ -257,7 +61,7 @@ markmap:
 &lt;/h3&gt;&lt;h4 id=&#34;获得-tg_bot_token&#34;&gt;获得 &lt;code&gt;TG_BOT_TOKEN&lt;/code&gt;
 &lt;/h4&gt;&lt;p&gt;向 &lt;a class=&#34;link&#34; href=&#34;https://t.me/BotFather&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;@BotFather&lt;/a&gt; 发送 &lt;code&gt;/newbot&lt;/code&gt;，按照提示输入 bot 的备注、用户名等信息。成功创建后获得 &lt;code&gt;TG_BOT_TOKEN&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://github.com/zxsos/CloudFlare-ImgBed/raw/main/static/readme/202409071744569.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257049417_20250515051036488.webp&#34;
 	
 	
 	
@@ -272,7 +76,7 @@ markmap:
 &lt;li&gt;创建一个新的频道（Channel），进入新建的频道，选择频道管理，将刚才创建的机器人设为频道管理员。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/zxsos/CloudFlare-ImgBed/blob/main/static/readme/202409071758534.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://github.com/zxsos/CloudFlare-ImgBed/raw/main/static/readme/202409071758534.png&#34;
+    &gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257051817_20250515051037889.webp&#34;
 	
 	
 	
@@ -283,7 +87,7 @@ markmap:
 	
 &gt;&lt;/a&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://github.com/zxsos/CloudFlare-ImgBed/blob/main/static/readme/202409071758796.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://github.com/zxsos/CloudFlare-ImgBed/raw/main/static/readme/202409071758796.png&#34;
+    &gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257044985_20250515051039679.webp&#34;
 	
 	
 	
@@ -332,7 +136,7 @@ markmap:
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;选择刚刚-fork-的仓库&#34;&gt;选择刚刚 fork 的仓库
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://img.0755755.xyz/file/AgACAgUAAyEGAASCiosrAAMaZt_aSJIeg1068G1YWWxxXEuNLBYAAuW9MRt2LwFXPykLVKYQH-YBAAMCAAN5AAM2BA.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257055656_20250515051046417.webp&#34;
 	
 	
 	
@@ -344,7 +148,7 @@ markmap:
 &gt;&lt;/p&gt;
 &lt;p&gt;点击 setup，下一个页面不需要设置，直接点击下一步直至部署完成。&lt;/p&gt;
 &lt;h3 id=&#34;设置-kv&#34;&gt;设置 kv
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5c29789%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20250510210839821.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257052301_20250515051044530.webp&#34;
 	
 	
 	
@@ -355,7 +159,7 @@ markmap:
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;namespacename 填写: &lt;code&gt;img_url&lt;/code&gt;，点击 add：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;C:%5cUsers%5c29789%5cAppData%5cRoaming%5cTypora%5ctypora-user-images%5cimage-20250510210916960.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257058978_20250515051048330.webp&#34;
 	
 	
 	
@@ -384,7 +188,7 @@ BASIC_PASS = 后台管理密码
 BASIC_USER = 后台管理用户名
 TG_BOT_TOKEN = 刚才让记下的添加的机器人的 api
 TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1746882639283_20250510211028290.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257057526_20250515051051991.webp&#34;
 	
 	
 	
@@ -396,7 +200,7 @@ TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;&lt;/blockquote&gt
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;re-部署&#34;&gt;RE 部署
 &lt;/h3&gt;&lt;p&gt;再重新部署一遍，就能使用了：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1746882661093_20250510211056720.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257066001_20250515051053654.webp&#34;
 	
 	
 	
@@ -408,7 +212,7 @@ TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;&lt;/blockquote&gt
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;网址是 cf 给你的地址：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1746882690044_20250510211120392.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257076613_20250515051106469.webp&#34;
 	
 	
 	
@@ -419,7 +223,7 @@ TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;&lt;/blockquote&gt
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;也可以绑定自己的域名：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1746882712667_20250510211143320.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257082013_20250515051109976.webp&#34;
 	
 	
 	
@@ -431,7 +235,7 @@ TG_CHAT_ID = tg 返回的频道信息里的频道 id&lt;/p&gt;&lt;/blockquote&gt
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;结束&#34;&gt;结束
 &lt;/h3&gt;&lt;p&gt;至此大功告成，输入域名就能访问了：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1746882736340_20250510211205192.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257078092_20250515051111479.webp&#34;
 	
 	
 	
@@ -600,7 +404,7 @@ markmap:
 &lt;p&gt;版本 5.7+ 不要打开外部访问&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/680295eac9de1.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256963392_20250515050914183.webp&#34;
 	
 	
 	
@@ -610,7 +414,7 @@ markmap:
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802944cdf187.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256968750_20250515050916145.webp&#34;
 	
 	
 	
@@ -624,7 +428,7 @@ markmap:
 &lt;/ul&gt;
 &lt;h3 id=&#34;gitea-安装与-ssh-配置&#34;&gt;&lt;strong&gt;Gitea 安装与 SSH 配置&lt;/strong&gt;
 &lt;/h3&gt;&lt;h4 id=&#34;安装-gitea&#34;&gt;&lt;strong&gt;安装 Gitea&lt;/strong&gt;
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802963007595.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256986051_20250515050936345.webp&#34;
 	
 	
 	
@@ -633,7 +437,7 @@ markmap:
 		alt=&#34;image.png&#34;
 	
 	
-&gt; &lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/68029658d18f0.png&#34;
+&gt; &lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256989084_20250515050938361.webp&#34;
 	
 	
 	
@@ -683,7 +487,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 &lt;/div&gt;&lt;h3 id=&#34;gitea-配置&#34;&gt;&lt;strong&gt;Gitea 配置&lt;/strong&gt;
 &lt;/h3&gt;&lt;p&gt;&lt;span id=&#34;jump&#34;&gt; 跳过端口修改 &lt;/span&gt;
 默认是 &lt;code&gt;ip:3000&lt;/code&gt; 以下部分可以不用修改
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802a8e88b10e.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256995404_20250515050941803.webp&#34;
 	
 	
 	
@@ -694,7 +498,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;确认信息&#34;&gt;确认信息
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802aa7142011.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256991251_20250515050943373.webp&#34;
 	
 	
 	
@@ -709,7 +513,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
     &gt;知乎-如何开启 QQ SMTP&lt;/a&gt;
 可使用第三方 &lt;a class=&#34;link&#34; href=&#34;https://www.mailersend.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Email Sending Service&lt;/a&gt;
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802aaa39e8ad.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256992767_20250515050944600.webp&#34;
 	
 	
 	
@@ -720,7 +524,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;创建管理员账号&#34;&gt;创建管理员账号
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802abd513e56.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747256992242_20250515050944228.webp&#34;
 	
 	
 	
@@ -734,7 +538,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
     &gt;&lt;strong&gt;Cloudflare&lt;/strong&gt;&lt;/a&gt;
 &lt;/h2&gt;&lt;p&gt;如果域名商有免费 SSL 证书, 那就用 , 跳过这步, 主要是泛域名太贵, cf 可以免费, 如果你只搭建 Gitea 那么推荐到原服务商获取证书, 或者在 1panel 获取 SSl 证书&lt;/p&gt;
 &lt;h3 id=&#34;添加域&#34;&gt;添加域
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802afdc5cd8c.png&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257007214_20250515051000182.webp&#34;
 	
 	
 	
@@ -746,7 +550,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;修改-dns&#34;&gt;修改 DNS
 &lt;/h4&gt;&lt;p&gt;按提示修改服务商 默认 DNS 为 CF 的 DNS 解析域名, 由于 SSH 的局限性不使用代理, 打开代理后 SSH 连接到的是代理主机
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/21/680520f0c3723.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257008925_20250515051001317.webp&#34;
 	
 	
 	
@@ -758,7 +562,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;ssl-证书&#34;&gt;SSL 证书
 &lt;/h4&gt;&lt;p&gt;创建证书 -&amp;gt; 下载证书
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802b1515e381.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257001567_20250515050948215.webp&#34;
 	
 	
 	
@@ -769,7 +573,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 	
 &gt;
 修改加密为完全(严格)
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802b3b2522da.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257015871_20250515051007675.webp&#34;
 	
 	
 	
@@ -781,7 +585,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;导入证书&#34;&gt;导入证书
 &lt;/h4&gt;&lt;p&gt;拿到证书后回到 1panel 点击 &lt;strong&gt;网站&lt;/strong&gt;-&amp;gt; &lt;strong&gt;证书&lt;/strong&gt;-&amp;gt; &lt;strong&gt;上传证书&lt;/strong&gt; 填写信息或导入
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802b236ba18a.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257018906_20250515051011227.webp&#34;
 	
 	
 	
@@ -793,7 +597,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;反向代理&#34;&gt;反向代理
 &lt;/h4&gt;&lt;p&gt;然后点击 &lt;strong&gt;网站&lt;/strong&gt; -&amp;gt; &lt;strong&gt;创建&lt;/strong&gt; , 选择反向代理
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802b2dc1dbd8.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257028573_20250515051014478.webp&#34;
 	
 	
 	
@@ -805,7 +609,7 @@ Port 2223&lt;/p&gt;&lt;/blockquote&gt;
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;开启-https&#34;&gt;开启 HTTPS
 &lt;/h4&gt;&lt;p&gt;确定后点击网站 &lt;strong&gt;配置&lt;/strong&gt; 开启 HTTPS
-&lt;img src=&#34;https://lsky.bangbang.site/i/2025/04/19/6802b34536855.png&#34;
+&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257029638_20250515051016680.webp&#34;
 	
 	
 	
