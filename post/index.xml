@@ -75,8 +75,7 @@ markmap:
 &lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;创建一个新的频道（Channel），进入新建的频道，选择频道管理，将刚才创建的机器人设为频道管理员。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/zxsos/CloudFlare-ImgBed/blob/main/static/readme/202409071758534.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257051817_20250515051037889.webp&#34;
+&lt;p&gt;[&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747299124854_20250515165200423.webp&#34;
 	
 	
 	
@@ -85,9 +84,7 @@ markmap:
 		alt=&#34;img&#34;
 	
 	
-&gt;&lt;/a&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://github.com/zxsos/CloudFlare-ImgBed/blob/main/static/readme/202409071758796.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747257044985_20250515051039679.webp&#34;
+&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747299356419_20250515165545952.webp&#34;
 	
 	
 	
@@ -96,36 +93,30 @@ markmap:
 		alt=&#34;img&#34;
 	
 	
-&gt;&lt;/a&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://github.com/zxsos/CloudFlare-ImgBed/blob/main/static/readme/202410291531473.png&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;&lt;img src=&#34;https://github.com/zxsos/CloudFlare-ImgBed/raw/main/static/readme/202410291531473.png&#34;
+&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747299355910_20250515165546748.webp&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;img&#34;
 	
-	
-&gt;&lt;/a&gt;&lt;/p&gt;
+&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;向 &lt;a class=&#34;link&#34; href=&#34;https://t.me/VersaToolsBot&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;@VersaToolsBot&lt;/a&gt; &lt;strong&gt;转发&lt;/strong&gt; 一条第 2 步新建频道中的消息，获取 &lt;code&gt;TG_CHAT_ID&lt;/code&gt;（频道 ID）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://github.com/zxsos/CloudFlare-ImgBed/raw/main/static/readme/202409071751619.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747299385149_20250515165616392.webp&#34;
 	
 	
 	
 	loading=&#34;lazy&#34;
-	
-		alt=&#34;img&#34;
 	
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;cloudflare-设置&#34;&gt;cloudflare 设置
 &lt;/h2&gt;&lt;h3 id=&#34;creat-page&#34;&gt;Creat Page
 &lt;/h3&gt;&lt;p&gt;打开 cloudflare，点击左边的 work&amp;amp;page，接着点击 creat：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1746882494261_20250510210806428.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747298870836_20250515164739716.webp&#34;
 	
 	
 	
@@ -171,7 +162,7 @@ markmap:
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;绑定-kv&#34;&gt;绑定 kv
 &lt;/h3&gt;&lt;p&gt;回到 workpage，点击自己项目进去 setting，找到下图的位置，添加 img_url，绑定到刚才添加的 kv：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1746882612308_20250510210959244.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zxsos.pages.dev/file/pic/1747299043469_20250515165038843.webp&#34;
 	
 	
 	
